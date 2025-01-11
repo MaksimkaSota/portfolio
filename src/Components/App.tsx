@@ -1,5 +1,5 @@
 import type { FC, ReactElement } from 'react';
-import classes from './App.module.css'
+import classes from './App.module.scss'
 
 export const App: FC = (): ReactElement => {
   return (

@@ -1,6 +1,6 @@
-import './index.css';
-import './assets/fonts/inter/inter.css';
-import './assets/fonts/nunito/nunito.css';
+import './index.scss';
+import './assets/fonts/inter/inter.scss';
+import './assets/fonts/nunito/nunito.scss';
 import ReactDOM from 'react-dom/client';
 import { StrictMode } from 'react';
 import reportWebVitals from './reportWebVitals';
