@@ -3,7 +3,9 @@
 
   .title {
     padding: $indent-min;
-    font: $size-50 Nunito, sans-serif;
+    font:
+      $size-50 Nunito,
+      sans-serif;
     color: $title-text;
     background: $even-block-background;
   }

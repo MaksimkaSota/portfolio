@@ -1,5 +1,5 @@
 import type { FC, ReactElement } from 'react';
-import classes from './App.module.scss'
+import classes from './App.module.scss';
 
 export const App: FC = (): ReactElement => {
   return (
@@ -8,4 +8,4 @@ export const App: FC = (): ReactElement => {
       <p className={classes.text}>Hello World, I am Maksim Sotnikov</p>
     </div>
   );
-}
+};
