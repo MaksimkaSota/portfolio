@@ -1,22 +1,22 @@
-$white: rgb(255, 255, 255);
+$light-beige: rgb(210, 220, 230);
 $pale-orange: rgb(220, 150, 90);
+$gray: rgb(128, 128, 128);
 $dark-gray: rgb(17, 19, 16);
 $dark-grayish-blue: rgba(31, 34, 29);
 
-$content-text: $white;
-$active-content-text: $pale-orange;
-$title-text: $pale-orange;
+$content-text: $gray;
+$main-content-text: $light-beige;
+$highlight-text: $pale-orange;
 $border-color: $pale-orange;
 $button-background: $pale-orange;
-$active-button-background: $dark-gray;
 $input-background: $dark-grayish-blue;
 $card-background: $dark-gray;
 $dark-block-background: $dark-gray;
 $light-block-background: $dark-grayish-blue;
 
 $size-16: 1rem;
-$size-26: 1.625rem;
-$size-50: 3.125rem;
+$size-32: 2rem;
+$size-42: 2.625rem;
 
 $indent-min: 10px;
 $indent-max: 20px;

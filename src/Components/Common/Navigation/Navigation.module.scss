@@ -6,6 +6,7 @@
       700 $size-16 Nunito,
       sans-serif;
     text-transform: uppercase;
+    color: $main-content-text;
     transition: all 0.25s linear;
 
     &:not(:last-child) {
@@ -14,7 +15,7 @@
 
     &:hover {
       cursor: pointer;
-      color: $active-content-text;
+      color: $highlight-text;
     }
   }
 }

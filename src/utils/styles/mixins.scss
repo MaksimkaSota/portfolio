@@ -1,3 +1,5 @@
+@import './variables';
+
 @mixin position($w, $m) {
   width: $w;
   margin: $m;
@@ -8,4 +10,13 @@
   flex-direction: $fd;
   justify-content: $jc;
   align-items: $ai;
+}
+
+%title {
+  margin: 0 0 $indent-max 0;
+  font:
+    $size-42 Nunito,
+    sans-serif;
+  color: $main-content-text;
+  text-align: center;
 }

@@ -1,0 +1,58 @@
+.aboutMe {
+  background: $dark-block-background;
+
+  .wrapper {
+    @include position(80%, 0 auto);
+    @include flex(null, space-between, center);
+    padding: $indent-max 0;
+
+    .portrait {
+      width: 30%;
+      box-shadow: 0 0 10px 0 rgba(220, 150, 90, 0.3);
+    }
+
+    .content {
+      width: 60%;
+
+      .title {
+        @extend %title;
+      }
+
+      .mainTitle {
+        margin: 0 0 $indent-min 0;
+        font:
+          400 $size-32 Nunito,
+          sans-serif;
+        color: $highlight-text;
+        text-align: center;
+      }
+
+      .text {
+        font-size: $size-16;
+        text-align: justify;
+
+        .highlightText {
+          color: $main-content-text;
+        }
+
+        &:first-of-type {
+          margin: 0 0 $indent-min 0;
+        }
+
+        &:last-of-type {
+          margin: 0 0 $indent-max 0;
+        }
+      }
+
+      .educationBlock {
+        .education {
+          color: $main-content-text;
+        }
+
+        &:not(:last-child) {
+          margin: 0 0 $indent-min 0;
+        }
+      }
+    }
+  }
+}
