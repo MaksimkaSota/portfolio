@@ -1,0 +1,20 @@
+.navigation {
+  @include flex(null, null, center);
+
+  .link {
+    font:
+      700 $size-16 Nunito,
+      sans-serif;
+    text-transform: uppercase;
+    transition: all 0.25s linear;
+
+    &:not(:last-child) {
+      margin: 0 $indent-max 0 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: $active-content-text;
+    }
+  }
+}

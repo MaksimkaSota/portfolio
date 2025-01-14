@@ -4,16 +4,20 @@ $dark-gray: rgb(17, 19, 16);
 $dark-grayish-blue: rgba(31, 34, 29);
 
 $content-text: $white;
+$active-content-text: $pale-orange;
 $title-text: $pale-orange;
 $border-color: $pale-orange;
 $button-background: $pale-orange;
+$active-button-background: $dark-gray;
 $input-background: $dark-grayish-blue;
 $card-background: $dark-gray;
-$even-block-background: $dark-gray;
-$odd-block-background: $dark-grayish-blue;
+$dark-block-background: $dark-gray;
+$light-block-background: $dark-grayish-blue;
 
+$size-16: 1rem;
 $size-26: 1.625rem;
 $size-50: 3.125rem;
 
 $indent-min: 10px;
 $indent-max: 20px;
+$border: 3px;

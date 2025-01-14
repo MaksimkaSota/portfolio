@@ -7,12 +7,12 @@
       $size-50 Nunito,
       sans-serif;
     color: $title-text;
-    background: $even-block-background;
+    background: $dark-block-background;
   }
 
   .text {
     padding: $indent-min;
     font-size: $size-26;
-    background: $odd-block-background;
+    background: $light-block-background;
   }
 }

@@ -1,0 +1,9 @@
+.header {
+  background: $light-block-background;
+
+  .wrapper {
+    @include position(90%, 0 auto);
+    @include flex(null, space-between, center);
+    padding: $indent-max 0;
+  }
+}
