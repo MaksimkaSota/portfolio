@@ -1,11 +1,11 @@
 import type { FC, ReactElement } from 'react';
-import classes from './AboutMe.module.scss';
+import classes from './About.module.scss';
 import { DownloadButton } from '../../Common/DownloadButton/DownloadButton';
 import portrait from '../../../assets/images/portrait.jpg';
 
-export const AboutMe: FC = (): ReactElement => {
+export const About: FC = (): ReactElement => {
   return (
-    <div className={classes.aboutMe}>
+    <main className={classes.aboutMe}>
       <div className={classes.wrapper}>
         <img className={classes.portrait} src={portrait} alt="Portrait" />
         <div className={classes.content}>
@@ -37,6 +37,6 @@ export const AboutMe: FC = (): ReactElement => {
           <DownloadButton />
         </div>
       </div>
-    </div>
+    </main>
   );
 };

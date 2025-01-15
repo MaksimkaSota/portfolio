@@ -4,6 +4,6 @@
   .wrapper {
     @include position(90%, 0 auto);
     @include flex(null, space-between, center);
-    padding: $indent-max 0;
+    padding: $indent-min 0;
   }
 }

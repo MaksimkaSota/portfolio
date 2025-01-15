@@ -1,4 +1,6 @@
 .aboutMe {
+  @include flex(null, center, center);
+  flex-grow: 1;
   background: $dark-block-background;
 
   .wrapper {
@@ -28,29 +30,30 @@
       }
 
       .text {
+        margin: 0 0 $indent-min 0;
         font-size: $size-16;
         text-align: justify;
 
         .highlightText {
+          font:
+            $size-18 Nunito,
+            sans-serif;
           color: $main-content-text;
-        }
-
-        &:first-of-type {
-          margin: 0 0 $indent-min 0;
-        }
-
-        &:last-of-type {
-          margin: 0 0 $indent-max 0;
         }
       }
 
       .educationBlock {
+        margin: 0 0 $indent-min 0;
+
         .education {
+          font:
+            $size-18 Nunito,
+            sans-serif;
           color: $main-content-text;
         }
 
-        &:not(:last-child) {
-          margin: 0 0 $indent-min 0;
+        .speciality {
+          font-size: $size-14;
         }
       }
     }

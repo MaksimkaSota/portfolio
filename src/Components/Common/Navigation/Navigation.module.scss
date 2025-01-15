@@ -2,6 +2,7 @@
   @include flex(null, null, center);
 
   .link {
+    cursor: pointer;
     font:
       700 $size-16 Nunito,
       sans-serif;
@@ -14,8 +15,12 @@
     }
 
     &:hover {
-      cursor: pointer;
       color: $highlight-text;
     }
+  }
+
+  .activeLink {
+    cursor: default;
+    color: $highlight-text;
   }
 }

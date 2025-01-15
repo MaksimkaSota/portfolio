@@ -1,11 +1,12 @@
 .button {
-  padding: $indent-min 0;
+  padding: $button-indent 0;
   font:
     700 $size-16 Nunito,
     sans-serif;
   color: $main-content-text;
   background: $button-background;
   outline: $border solid $border-color;
+  outline-offset: -$border;
   transition: all 0.25s linear;
 
   &:hover {
