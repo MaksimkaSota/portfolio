@@ -35,10 +35,7 @@
         text-align: justify;
 
         .highlightText {
-          font:
-            $size-18 Nunito,
-            sans-serif;
-          color: $main-content-text;
+          @extend %highlightText;
         }
       }
 
@@ -46,10 +43,7 @@
         margin: 0 0 $indent-min 0;
 
         .education {
-          font:
-            $size-18 Nunito,
-            sans-serif;
-          color: $main-content-text;
+          @extend %highlightText;
         }
 
         .speciality {

@@ -1,9 +1,9 @@
 import type { FC, ReactElement } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { About } from './About/About';
-import { RoutePath } from '../../utils/types/enums';
+import { RoutePath } from '../../utils/enums';
 
-export const MainRoutes: FC = (): ReactElement => {
+export const Main: FC = (): ReactElement => {
   return (
     <Routes>
       <Route path={RoutePath.NotFound} element={<h3>NotFound</h3>} />

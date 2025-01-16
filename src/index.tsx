@@ -1,6 +1,7 @@
 import './index.scss';
 import './assets/fonts/inter/inter.scss';
 import './assets/fonts/nunito/nunito.scss';
+import './assets/fonts/icons/icons.scss';
 import ReactDOM from 'react-dom/client';
 import { StrictMode } from 'react';
 import { BrowserRouter } from 'react-router-dom';

@@ -2,8 +2,6 @@
   background: $light-block-background;
 
   .wrapper {
-    @include position(90%, 0 auto);
-    @include flex(null, space-between, center);
-    padding: $indent-min 0;
+    @extend %wrapper;
   }
 }

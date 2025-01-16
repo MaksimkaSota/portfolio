@@ -2,13 +2,9 @@
   @include flex(null, null, center);
 
   .link {
+    @extend %link;
     cursor: pointer;
-    font:
-      700 $size-16 Nunito,
-      sans-serif;
     text-transform: uppercase;
-    color: $main-content-text;
-    transition: all 0.25s linear;
 
     &:not(:last-child) {
       margin: 0 $indent-max 0 0;

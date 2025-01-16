@@ -1,7 +1,7 @@
 import { type FC, type ReactElement, useState } from 'react';
 import classes from './LanguageButton.module.scss';
 import { Button } from '../Button/Button';
-import { Language } from '../../../utils/types/enums';
+import { Language } from '../../../utils/enums';
 
 export const LanguageButton: FC = (): ReactElement => {
   const [languageMode, setLanguageMode] = useState<string>(Language.Ru);

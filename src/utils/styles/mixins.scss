@@ -12,6 +12,12 @@
   align-items: $ai;
 }
 
+%wrapper {
+  @include position(90%, 0 auto);
+  @include flex(null, space-between, center);
+  padding: $indent-min 0;
+}
+
 %title {
   margin: 0 0 $indent-min 0;
   font:
@@ -19,4 +25,19 @@
     sans-serif;
   color: $main-content-text;
   text-align: center;
+}
+
+%link {
+  font:
+    700 $size-16 Nunito,
+    sans-serif;
+  color: $main-content-text;
+  transition: all 0.25s linear;
+}
+
+%highlightText {
+  font:
+    $size-18 Nunito,
+    sans-serif;
+  color: $main-content-text;
 }

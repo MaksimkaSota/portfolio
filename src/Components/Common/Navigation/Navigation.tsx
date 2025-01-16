@@ -2,7 +2,7 @@ import type { FC, ReactElement } from 'react';
 import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
 import classes from './Navigation.module.scss';
-import { RoutePath } from '../../../utils/types/enums';
+import { RoutePath } from '../../../utils/enums';
 
 export const Navigation: FC = (): ReactElement => {
   const setClass = ({ isActive }: { isActive: boolean }): string =>
