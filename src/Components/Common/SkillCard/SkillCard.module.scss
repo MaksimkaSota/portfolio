@@ -1,0 +1,58 @@
+.skillCard {
+  @include flex(column, null, center);
+  padding: $indent-max 0;
+  background: $card-background;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    width: 10%;
+    height: 15%;
+    position: absolute;
+  }
+
+  &::before {
+    border-left: $border solid $border-color;
+    border-bottom: $border solid $border-color;
+    left: 0;
+    bottom: 0;
+  }
+
+  &::after {
+    border-right: $border solid $border-color;
+    border-top: $border solid $border-color;
+    right: 0;
+    top: 0;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease-out;
+  }
+
+  &:hover .logoContainer .logo {
+    transform: rotate(360deg) scale(1.2);
+    transition: all 0.5s ease-out;
+  }
+
+  .logoContainer {
+    @include flex(null, center, center);
+    width: 50px;
+    height: 50px;
+    margin: 0 0 $indent-max 0;
+
+    .logo {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .name {
+    font:
+      $size-16 Nunito,
+      sans-serif;
+  }
+}

@@ -2,7 +2,7 @@ $light-beige: rgb(210, 220, 230);
 $pale-orange: rgb(220, 150, 90);
 $gray: rgb(128, 128, 128);
 $dark-gray: rgb(17, 19, 16);
-$dark-grayish-blue: rgba(31, 34, 29);
+$dark-grayish-blue: rgb(31, 34, 29);
 
 $content-text: $gray;
 $main-content-text: $light-beige;
@@ -10,7 +10,7 @@ $highlight-text: $pale-orange;
 $border-color: $pale-orange;
 $button-background: $pale-orange;
 $input-background: $dark-grayish-blue;
-$card-background: $dark-gray;
+$card-background: $dark-grayish-blue;
 $dark-block-background: $dark-gray;
 $light-block-background: $dark-grayish-blue;
 
@@ -23,4 +23,4 @@ $size-42: 2.625rem;
 $button-indent: 5px;
 $indent-min: 10px;
 $indent-max: 20px;
-$border: 3px;
+$border: 2px;

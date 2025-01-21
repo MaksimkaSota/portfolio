@@ -1,20 +1,17 @@
 .aboutMe {
-  @include flex(null, center, center);
-  flex-grow: 1;
-  background: $dark-block-background;
+  @extend %content;
 
   .wrapper {
-    @include position(80%, 0 auto);
+    @extend %wrapper-content;
     @include flex(null, space-between, center);
-    padding: $indent-max 0;
 
     .portrait {
-      width: 30%;
-      box-shadow: 0 0 10px 0 rgba(220, 150, 90, 0.3);
+      width: 25%;
+      box-shadow: 0 0 30px -10px $border-color;
     }
 
     .content {
-      width: 60%;
+      width: 70%;
 
       .title {
         @extend %title;

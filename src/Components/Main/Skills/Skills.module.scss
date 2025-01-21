@@ -1,0 +1,84 @@
+.skills {
+  @extend %content;
+
+  .wrapper {
+    @extend %wrapper-content;
+
+    .title {
+      @extend %title;
+    }
+
+    .skillCards {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: $indent-min;
+      grid-template-areas:
+        'HTML CSS Less Sass JS TS React Redux'
+        'Jest Webpack ESLint Prettier Git GH WS Figma';
+
+      .HTML {
+        grid-area: HTML;
+      }
+
+      .CSS {
+        grid-area: CSS;
+      }
+
+      .Less {
+        grid-area: Less;
+      }
+
+      .Sass {
+        grid-area: Sass;
+      }
+
+      .JS {
+        grid-area: JS;
+      }
+
+      .TS {
+        grid-area: TS;
+      }
+
+      .React {
+        grid-area: React;
+      }
+
+      .Redux {
+        grid-area: Redux;
+      }
+
+      .Jest {
+        grid-area: Jest;
+      }
+
+      .Webpack {
+        grid-area: Webpack;
+      }
+
+      .ESLint {
+        grid-area: ESLint;
+      }
+
+      .Prettier {
+        grid-area: Prettier;
+      }
+
+      .Git {
+        grid-area: Git;
+      }
+
+      .GH {
+        grid-area: GH;
+      }
+
+      .WS {
+        grid-area: WS;
+      }
+
+      .Figma {
+        grid-area: Figma;
+      }
+    }
+  }
+}

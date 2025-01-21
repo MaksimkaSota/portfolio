@@ -2,7 +2,7 @@
   background: $light-block-background;
 
   .wrapper {
-    @extend %wrapper;
+    @extend %wrapper-template;
 
     .links {
       @include flex(null, null, center);
@@ -14,10 +14,8 @@
           margin: 0 $indent-max 0 0;
         }
 
-        &:hover {
-          .name {
-            color: $highlight-text;
-          }
+        &:hover .name {
+          color: $highlight-text;
         }
 
         .name {

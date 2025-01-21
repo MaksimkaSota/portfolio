@@ -12,10 +12,21 @@
   align-items: $ai;
 }
 
-%wrapper {
+%wrapper-template {
   @include position(90%, 0 auto);
   @include flex(null, space-between, center);
   padding: $indent-min 0;
+}
+
+%wrapper-content {
+  @include position(80%, 0 auto);
+  padding: $indent-max 0;
+}
+
+%content {
+  @include flex(null, center, center);
+  flex-grow: 1;
+  background: $dark-block-background;
 }
 
 %title {
