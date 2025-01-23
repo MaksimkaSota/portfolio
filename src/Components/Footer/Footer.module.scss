@@ -6,27 +6,6 @@
 
     .links {
       @include flex(null, null, center);
-
-      .link {
-        @include flex(null, null, center);
-
-        &:not(:last-child) {
-          margin: 0 $indent-max 0 0;
-        }
-
-        &:hover .name {
-          color: $highlight-text;
-        }
-
-        .name {
-          @extend %link;
-          margin: 0 $indent-min 0 0;
-        }
-
-        .icon::before {
-          font-size: $size-32;
-        }
-      }
     }
 
     .copyright {

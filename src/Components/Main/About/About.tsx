@@ -22,19 +22,17 @@ export const About: FC = (): ReactElement => {
             believe that web development is not just about coding, but also about understanding the needs of users and
             creating solutions that meet their requirements.
           </p>
-          <div className={classes.educationBlock}>
-            <p className={classes.education}>Belarusian National Technical University</p>
-            <p className={classes.speciality}>Mechanical Engineering</p>
+          <div className={classes.container}>
+            <div className={classes.educationBlock}>
+              <p className={classes.education}>Belarusian National Technical University</p>
+              <p className={classes.speciality}>Mechanical Engineering</p>
+              <p className={classes.education}>Computer Academy STEP</p>
+              <p className={classes.speciality}>Front-end Development</p>
+              <p className={classes.education}>The Rolling Scopes School</p>
+              <p className={classes.speciality}>JavaScript/Front-end</p>
+            </div>
+            <DownloadButton />
           </div>
-          <div className={classes.educationBlock}>
-            <p className={classes.education}>Computer Academy STEP</p>
-            <p className={classes.speciality}>Front-end Development</p>
-          </div>
-          <div className={classes.educationBlock}>
-            <p className={classes.education}>The Rolling Scopes School</p>
-            <p className={classes.speciality}>JavaScript/Front-end</p>
-          </div>
-          <DownloadButton />
         </div>
       </div>
     </main>

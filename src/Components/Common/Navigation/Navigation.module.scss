@@ -2,7 +2,7 @@
   @include flex(null, null, center);
 
   .link {
-    @extend %link;
+    @include link($size-16);
     cursor: pointer;
     text-transform: uppercase;
 

@@ -11,7 +11,7 @@ export const Navigation: FC = (): ReactElement => {
   return (
     <nav className={classes.navigation}>
       <NavLink to={RoutePath.About} className={setClass}>
-        About me
+        About
       </NavLink>
       <NavLink to={RoutePath.Skills} className={setClass}>
         Skills

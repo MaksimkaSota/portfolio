@@ -1,6 +1,6 @@
 import type { FC, ReactElement } from 'react';
-import cn from 'classnames';
 import classes from './Footer.module.scss';
+import { Link } from '../Common/Link/Link';
 import { Icon } from '../../utils/enums';
 import { requestString } from '../../utils/endpoints';
 
@@ -9,14 +9,8 @@ export const Footer: FC = (): ReactElement => {
     <footer className={classes.footer}>
       <div className={classes.wrapper}>
         <div className={classes.links}>
-          <a className={classes.link} href={requestString.github} target="_blank" rel="noopener noreferrer">
-            <span className={classes.name}>GitHub</span>
-            <span className={cn(classes.icon, Icon.SquareGithub)} />
-          </a>
-          <a className={classes.link} href={requestString.linkedin} target="_blank" rel="noopener noreferrer">
-            <span className={classes.name}>LinkedIn</span>
-            <span className={cn(classes.icon, Icon.SquareLinkedin)} />
-          </a>
+          <Link link={requestString.gitHub} icon={Icon.SquareGithub} text="GitHub" iconAfterName />
+          <Link link={requestString.linkedIn} icon={Icon.SquareLinkedin} text="LinkedIn" iconAfterName />
         </div>
         <p className={classes.copyright}>
           © Developed by <span className={classes.highlightText}>Maksim Sotnikov</span>

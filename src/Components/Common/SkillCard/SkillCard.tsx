@@ -10,9 +10,9 @@ type PropsType = {
 
 export const SkillCard: FC<PropsType> = ({ name, className, logo }): ReactElement => {
   return (
-    <div className={classes.skillCard}>
+    <div className={cn(classes.skillCard, className)}>
       <div className={classes.logoContainer}>
-        <img className={cn(classes.logo, className)} src={logo} alt="Logo" />
+        <img className={classes.logo} src={logo} alt="Logo" />
       </div>
       <p className={classes.name}>{name}</p>
     </div>

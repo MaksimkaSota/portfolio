@@ -27,23 +27,21 @@
       }
 
       .text {
-        margin: 0 0 $indent-min 0;
-        font-size: $size-16;
-        text-align: justify;
+        @extend %description;
 
         .highlightText {
           @extend %highlightText;
         }
       }
 
-      .educationBlock {
-        margin: 0 0 $indent-min 0;
+      .container {
+        @include flex(null, space-between, center);
 
-        .education {
+        .educationBlock .education {
           @extend %highlightText;
         }
 
-        .speciality {
+        .educationBlock .speciality {
           font-size: $size-14;
         }
       }

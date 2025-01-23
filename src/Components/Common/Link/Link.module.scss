@@ -1,0 +1,40 @@
+.link {
+  @include flex(null, null, center);
+  cursor: pointer;
+
+  &:hover .nameBeforeIcon,
+  &:hover .nameAfterIcon {
+    color: $highlight-text;
+  }
+
+  &:not(:last-child) {
+    margin: 0 $indent-max 0 0;
+  }
+
+  .nameBeforeIcon {
+    @include link($size-16);
+    margin: 0 $indent-min 0 0;
+  }
+
+  .iconAfterName::before {
+    font-size: $size-32;
+  }
+
+  .nameAfterIcon {
+    @include link($size-14);
+  }
+
+  .iconBeforeName::before {
+    font-size: $size-18;
+    margin: 0 $indent-min 0 0;
+  }
+}
+
+.notLink {
+  cursor: default;
+
+  &:hover .nameBeforeIcon,
+  &:hover .nameAfterIcon {
+    color: $main-content-text;
+  }
+}
