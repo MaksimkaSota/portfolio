@@ -1,8 +1,8 @@
 import type { FC, ReactElement } from 'react';
 import cn from 'classnames';
 import classes from './ProjectCard.module.scss';
-import { Link } from '../Link/Link';
-import { Icon } from '../../../utils/enums';
+import { Link } from '../../../Common/Link/Link';
+import { Icon } from '../../../../utils/enums';
 
 type PropsType = {
   name: string;

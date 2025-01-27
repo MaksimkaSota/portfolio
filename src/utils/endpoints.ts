@@ -5,6 +5,9 @@ type RequestString = {
   easyChartsPreview: string;
   gitHub: string;
   linkedIn: string;
+  facebook: string;
+  instagram: string;
+  telegram: string;
 };
 
 export const requestString: RequestString = {
@@ -14,4 +17,7 @@ export const requestString: RequestString = {
   easyChartsPreview: 'https://easy-charts-8d058.web.app',
   gitHub: 'https://github.com/MaksimkaSota',
   linkedIn: 'https://linkedin.com/in/maksimkasota',
+  facebook: 'https://facebook.com/maksimkasota',
+  instagram: 'https://instagram.com/maksimkasota',
+  telegram: 'https://t.me/maksimkasota',
 };

@@ -1,0 +1,50 @@
+.formField {
+  @include flex(column, null, null);
+  position: relative;
+  z-index: 2;
+
+  .field {
+    @include position(100%, 0 0 $indent-max 0);
+    padding: $indent-min;
+    background: $input-background;
+    color: $main-content-text;
+    font:
+      $size-14 Inter,
+      sans-serif;
+    cursor: pointer;
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px $input-background inset;
+      -webkit-text-fill-color: $main-content-text;
+    }
+
+    &:focus {
+      outline: $border solid $border-color;
+      outline-offset: -$border;
+      caret-color: $highlight-text;
+    }
+  }
+
+  .textarea {
+    height: 100px;
+    resize: none;
+  }
+
+  .validationError {
+    outline: $border solid $error;
+    outline-offset: -$border;
+
+    &:focus {
+      outline-color: $error;
+      caret-color: $error;
+    }
+  }
+
+  .fieldError {
+    color: $error;
+    font-size: $size-12;
+    position: absolute;
+    left: 10px;
+    bottom: 3px;
+  }
+}

@@ -1,6 +1,6 @@
 import type { FC, ReactElement } from 'react';
 import classes from './Skills.module.scss';
-import { SkillCard } from '../../Common/SkillCard/SkillCard';
+import { SkillCard } from './SkillCard/SkillCard';
 import HTML from '../../../assets/images/logos/HTML.png';
 import CSS from '../../../assets/images/logos/CSS.png';
 import Less from '../../../assets/images/logos/Less.png';

@@ -20,6 +20,22 @@ export enum Icon {
   RoundLink = 'iconRoundLink',
 }
 
+export enum FieldName {
+  Name = 'name',
+  Email = 'email',
+  Message = 'message',
+}
+
+export enum ElementName {
+  Input = 'input',
+  Textarea = 'textarea',
+  P = 'p',
+  TypeText = 'text',
+  TypeButton = 'button',
+  TypeSubmit = 'submit',
+  TypeReset = 'reset',
+}
+
 export enum Language {
   En = 'en',
   Ru = 'ru',

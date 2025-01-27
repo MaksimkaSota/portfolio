@@ -59,21 +59,20 @@
   color: $main-content-text;
 }
 
-%card {
-  cursor: default;
-  background: $card-background;
+@mixin corners($w, $h) {
   position: relative;
 
   &::before,
   &::after {
     content: '';
-    width: 10%;
-    height: 15%;
+    width: $w;
+    height: $h;
     position: absolute;
-    transition: all 0.5s ease-out;
     z-index: 1;
   }
+}
 
+%left-bottom-right-top-corners {
   &::before {
     border-left: $border solid $border-color;
     border-bottom: $border solid $border-color;
@@ -86,6 +85,34 @@
     border-top: $border solid $border-color;
     right: 0;
     top: 0;
+  }
+}
+
+%left-top-right-bottom-corners {
+  &::before {
+    border-left: $border solid $border-color;
+    border-top: $border solid $border-color;
+    left: 0;
+    top: 0;
+  }
+
+  &::after {
+    border-right: $border solid $border-color;
+    border-bottom: $border solid $border-color;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+%card-active-corners {
+  cursor: default;
+  background: $card-background;
+  @include corners(10%, 15%);
+  @extend %left-bottom-right-top-corners;
+
+  &::before,
+  &::after {
+    transition: all 0.5s ease-out;
   }
 
   &:hover::before,

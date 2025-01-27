@@ -1,0 +1,36 @@
+.contactForm {
+  width: 40%;
+  padding: $indent-max;
+  background: $light-block-background;
+  box-shadow: 0 0 10px 5px $shadow;
+  @include corners(50px, 50px);
+  @extend %left-bottom-right-top-corners;
+
+  .formTitle {
+    @extend %highlightText;
+    margin: 0 0 $indent-min 0;
+    text-align: center;
+  }
+
+  .wrapper {
+    padding: $indent-min;
+    @include corners(50px, 50px);
+    @extend %left-top-right-bottom-corners;
+
+    .sendButton {
+      width: 100%;
+      position: relative;
+      z-index: 2;
+
+      &:hover {
+        background: $dark-block-background;
+      }
+
+      &:disabled {
+        cursor: default;
+        outline-color: $error;
+        background: $disabled-button-background;
+      }
+    }
+  }
+}

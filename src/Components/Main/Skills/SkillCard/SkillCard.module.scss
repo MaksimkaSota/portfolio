@@ -1,6 +1,6 @@
 .skillCard {
   @include flex(column, null, center);
-  @extend %card;
+  @extend %card-active-corners;
   padding: $indent-max 0;
 
   &:hover .logoContainer .logo {

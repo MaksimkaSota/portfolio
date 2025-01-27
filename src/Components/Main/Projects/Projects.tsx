@@ -1,6 +1,6 @@
 import type { FC, ReactElement } from 'react';
 import classes from './Projects.module.scss';
-import { ProjectCard } from '../../Common/ProjectCard/ProjectCard';
+import { ProjectCard } from './ProjectCard/ProjectCard';
 import { requestString } from '../../../utils/endpoints';
 import SN from '../../../assets/images/SocialNetwork.png';
 import EC from '../../../assets/images/EasyCharts.png';

@@ -11,6 +11,10 @@
     margin: 0 $indent-max 0 0;
   }
 
+  .icon {
+    @include flex(null, center, center);
+  }
+
   .nameBeforeIcon {
     @include link($size-16);
     margin: 0 $indent-min 0 0;

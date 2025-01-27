@@ -13,11 +13,11 @@ type PropsType = {
 export const Link: FC<PropsType> = ({ link, icon, text, iconBeforeName, iconAfterName }): ReactElement => {
   return (
     <a className={cn(classes.link, { [classes.notLink]: !link })} href={link} target="_blank" rel="noopener noreferrer">
-      {iconBeforeName && <span className={cn(classes.iconBeforeName, icon)} />}
+      {iconBeforeName && <span className={cn(classes.icon, classes.iconBeforeName, icon)} />}
       <span className={cn({ [classes.nameAfterIcon]: iconBeforeName, [classes.nameBeforeIcon]: iconAfterName })}>
         {text}
       </span>
-      {iconAfterName && <span className={cn(classes.iconAfterName, icon)} />}
+      {iconAfterName && <span className={cn(classes.icon, classes.iconAfterName, icon)} />}
     </a>
   );
 };

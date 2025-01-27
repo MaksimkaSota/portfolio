@@ -1,6 +1,6 @@
 .projectCard {
   @include flex(column, null, null);
-  @extend %card;
+  @extend %card-active-corners;
   padding: $indent-min;
 
   .name,
