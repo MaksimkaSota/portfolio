@@ -1,22 +1,22 @@
 import type { FC, ReactElement } from 'react';
 import classes from './Skills.module.scss';
 import { SkillCard } from './SkillCard/SkillCard';
-import HTML from '../../../assets/images/logos/HTML.png';
-import CSS from '../../../assets/images/logos/CSS.png';
-import Less from '../../../assets/images/logos/Less.png';
-import Sass from '../../../assets/images/logos/Sass.png';
-import JS from '../../../assets/images/logos/JavaScript.png';
-import TS from '../../../assets/images/logos/TypeScript.png';
-import React from '../../../assets/images/logos/React.png';
-import Redux from '../../../assets/images/logos/Redux.png';
-import Webpack from '../../../assets/images/logos/Webpack.png';
-import ESLint from '../../../assets/images/logos/ESLint.png';
-import Prettier from '../../../assets/images/logos/Prettier.png';
-import Jest from '../../../assets/images/logos/Jest.png';
-import Git from '../../../assets/images/logos/Git.png';
-import GH from '../../../assets/images/logos/GitHub.png';
-import WS from '../../../assets/images/logos/WebStorm.png';
-import Figma from '../../../assets/images/logos/Figma.png';
+import HTML from '../../../assets/images/skills/HTML.png';
+import CSS from '../../../assets/images/skills/CSS.png';
+import Less from '../../../assets/images/skills/Less.png';
+import Sass from '../../../assets/images/skills/Sass.png';
+import JS from '../../../assets/images/skills/JavaScript.png';
+import TS from '../../../assets/images/skills/TypeScript.png';
+import React from '../../../assets/images/skills/React.png';
+import Redux from '../../../assets/images/skills/Redux.png';
+import Webpack from '../../../assets/images/skills/Webpack.png';
+import ESLint from '../../../assets/images/skills/ESLint.png';
+import Prettier from '../../../assets/images/skills/Prettier.png';
+import Jest from '../../../assets/images/skills/Jest.png';
+import Git from '../../../assets/images/skills/Git.png';
+import GH from '../../../assets/images/skills/GitHub.png';
+import WS from '../../../assets/images/skills/WebStorm.png';
+import Figma from '../../../assets/images/skills/Figma.png';
 
 export const Skills: FC = (): ReactElement => {
   return (

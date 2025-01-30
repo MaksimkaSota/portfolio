@@ -10,7 +10,7 @@
       width: 55%;
 
       .title {
-        @extend %title;
+        @include title();
       }
 
       .links {

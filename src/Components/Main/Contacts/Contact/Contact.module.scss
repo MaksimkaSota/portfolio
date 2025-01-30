@@ -16,7 +16,7 @@
   }
 
   .name {
-    @extend %highlightText;
+    @include highlightText();
     margin: 0 $indent-max 0 0;
   }
 

@@ -12,6 +12,22 @@
   align-items: $ai;
 }
 
+@mixin title($c: $main-content-text) {
+  margin: 0 0 $indent-min 0;
+  font:
+    $size-42 Nunito,
+    sans-serif;
+  color: $c;
+  text-align: center;
+}
+
+@mixin highlightText($c: $main-content-text) {
+  font:
+    $size-18 Nunito,
+    sans-serif;
+  color: $c;
+}
+
 @mixin link($size) {
   font:
     700 $size Nunito,
@@ -37,26 +53,10 @@
   background: $dark-block-background;
 }
 
-%title {
-  margin: 0 0 $indent-min 0;
-  font:
-    $size-42 Nunito,
-    sans-serif;
-  color: $main-content-text;
-  text-align: center;
-}
-
 %description {
   margin: 0 0 $indent-min 0;
   font-size: $size-16;
   text-align: justify;
-}
-
-%highlightText {
-  font:
-    $size-18 Nunito,
-    sans-serif;
-  color: $main-content-text;
 }
 
 @mixin corners($w, $h) {

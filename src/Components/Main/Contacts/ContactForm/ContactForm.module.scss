@@ -7,7 +7,7 @@
   @extend %left-bottom-right-top-corners;
 
   .formTitle {
-    @extend %highlightText;
+    @include highlightText();
     margin: 0 0 $indent-min 0;
     text-align: center;
   }

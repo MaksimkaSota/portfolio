@@ -14,7 +14,7 @@
       width: 70%;
 
       .title {
-        @extend %title;
+        @include title();
       }
 
       .mainTitle {
@@ -30,7 +30,7 @@
         @extend %description;
 
         .highlightText {
-          @extend %highlightText;
+          @include highlightText();
         }
       }
 
@@ -38,7 +38,7 @@
         @include flex(null, space-between, center);
 
         .educationBlock .education {
-          @extend %highlightText;
+          @include highlightText();
         }
 
         .educationBlock .speciality {

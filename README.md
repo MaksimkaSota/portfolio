@@ -15,15 +15,14 @@ the needs of users and creating solutions that meet their requirements.
 
 ### Skills
 
-- `HTML`, `CSS`, `Less`, `Sass (SCSS)`;
+- `HTML`, `CSS`, `Less`, `Sass`;
 - `JavaScript`, `TypeScript`;
-- `React`, `React Router`, `Context API`, `Hooks API`;
+- `React`, `React Router`, `Hooks API`, `Context API`;
 - `Redux (Thunk, Saga)`, `Redux Toolkit (RTK query)`;
 - `Module styles`, `Styled components`, `UI libraries`;
-- `Axios (REST API)`, `Formik`, `i18next`;
 - `Webpack`, `ESLint (Airbnb)`, `Prettier`;
-- `Jest`, `React Test Renderer`;
-- `Git`, `GitHub`, `GitHub Pages`, `GitHub Actions`.
+- `Jest`, `Axios`, `Formik`, `i18next`;
+- `Git`, `GitHub`, `GitHub Actions`.
 
 ---
 

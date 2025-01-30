@@ -5,7 +5,7 @@
     @extend %wrapper-content;
 
     .title {
-      @extend %title;
+      @include title();
     }
 
     .skillCards {

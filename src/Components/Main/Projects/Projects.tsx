@@ -2,9 +2,9 @@ import type { FC, ReactElement } from 'react';
 import classes from './Projects.module.scss';
 import { ProjectCard } from './ProjectCard/ProjectCard';
 import { requestString } from '../../../utils/endpoints';
-import SN from '../../../assets/images/SocialNetwork.png';
-import EC from '../../../assets/images/EasyCharts.png';
-import FP from '../../../assets/images/FutureProject.png';
+import SN from '../../../assets/images/projects/SocialNetwork.png';
+import EC from '../../../assets/images/projects/EasyCharts.png';
+import FP from '../../../assets/images/projects/FutureProject.png';
 
 export const Projects: FC = (): ReactElement => {
   return (
