@@ -1,0 +1,7 @@
+.header {
+  background: $light-block-background;
+
+  .wrapper {
+    @extend %wrapper-template;
+  }
+}

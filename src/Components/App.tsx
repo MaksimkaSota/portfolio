@@ -1,11 +1,15 @@
 import type { FC, ReactElement } from 'react';
 import classes from './App.module.scss';
+import { Header } from './Header/Header';
+import { Main } from './Main/Main';
+import { Footer } from './Footer/Footer';
 
 export const App: FC = (): ReactElement => {
   return (
     <div className={classes.wrapper}>
-      <h1 className={classes.title}>My portfolio</h1>
-      <p className={classes.text}>Hello World, I am Maksim Sotnikov</p>
+      <Header />
+      <Main />
+      <Footer />
     </div>
   );
 };

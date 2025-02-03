@@ -1,0 +1,7 @@
+.downloadButton {
+  @include position(200px, 0 auto);
+
+  &:hover {
+    background: $light-block-background;
+  }
+}

@@ -1,0 +1,30 @@
+.projects {
+  @extend %content;
+
+  .wrapper {
+    @extend %wrapper-content;
+
+    .title {
+      @include title();
+    }
+
+    .projectCards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: $indent-min;
+      grid-template-areas: 'SN EC FP';
+
+      .SN {
+        grid-area: SN;
+      }
+
+      .EC {
+        grid-area: EC;
+      }
+
+      .FP {
+        grid-area: FP;
+      }
+    }
+  }
+}

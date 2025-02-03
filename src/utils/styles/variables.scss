@@ -1,19 +1,32 @@
-$white: rgb(255, 255, 255);
+$light-beige: rgb(210, 220, 230);
 $pale-orange: rgb(220, 150, 90);
+$light-pale-orange: rgba(220, 150, 90, 0.3);
+$gray: rgb(128, 128, 128);
+$brick-red: rgb(255, 99, 99);
 $dark-gray: rgb(17, 19, 16);
-$dark-grayish-blue: rgba(31, 34, 29);
+$dark-grayish-blue: rgb(31, 34, 29);
 
-$content-text: $white;
-$title-text: $pale-orange;
+$content-text: $gray;
+$main-content-text: $light-beige;
+$highlight-text: $pale-orange;
 $border-color: $pale-orange;
 $button-background: $pale-orange;
-$input-background: $dark-grayish-blue;
-$card-background: $dark-gray;
-$even-block-background: $dark-gray;
-$odd-block-background: $dark-grayish-blue;
+$disabled-button-background: $light-pale-orange;
+$input-background: $dark-gray;
+$card-background: $dark-grayish-blue;
+$dark-block-background: $dark-gray;
+$light-block-background: $dark-grayish-blue;
+$shadow: $light-pale-orange;
+$error: $brick-red;
 
-$size-26: 1.625rem;
-$size-50: 3.125rem;
+$size-12: 0.75rem;
+$size-14: 0.875rem;
+$size-16: 1rem;
+$size-18: 1.125rem;
+$size-32: 2rem;
+$size-42: 2.625rem;
 
+$button-indent: 5px;
 $indent-min: 10px;
 $indent-max: 20px;
+$border: 2px;

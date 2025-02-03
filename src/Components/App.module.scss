@@ -1,18 +1,4 @@
 .wrapper {
-  text-align: center;
-
-  .title {
-    padding: $indent-min;
-    font:
-      $size-50 Nunito,
-      sans-serif;
-    color: $title-text;
-    background: $even-block-background;
-  }
-
-  .text {
-    padding: $indent-min;
-    font-size: $size-26;
-    background: $odd-block-background;
-  }
+  min-height: 100vh;
+  @include flex(column, null, null);
 }

@@ -1,0 +1,25 @@
+.notFound {
+  @extend %content;
+
+  .wrapper {
+    @extend %wrapper-content;
+
+    .title {
+      @include title($error);
+    }
+
+    .image {
+      @include position(35%, 0 auto $indent-min);
+      filter: drop-shadow(0 0 5px $border-color);
+    }
+
+    .text {
+      font-size: $size-16;
+      text-align: center;
+
+      .pathname {
+        @include highlightText($error);
+      }
+    }
+  }
+}

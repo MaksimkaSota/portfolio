@@ -1,0 +1,22 @@
+.navigation {
+  @include flex(null, null, center);
+
+  .link {
+    @include link($size-16);
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      margin: 0 $indent-max 0 0;
+    }
+
+    &:hover {
+      color: $highlight-text;
+    }
+  }
+
+  .activeLink {
+    cursor: default;
+    color: $highlight-text;
+  }
+}

@@ -1,0 +1,21 @@
+.contacts {
+  @extend %content;
+  flex-direction: column;
+
+  .wrapper {
+    @extend %wrapper-content;
+    @include flex(null, space-between, center);
+
+    .content {
+      width: 55%;
+
+      .title {
+        @include title();
+      }
+
+      .links {
+        @include flex(null, null, center);
+      }
+    }
+  }
+}

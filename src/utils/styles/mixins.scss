@@ -1,3 +1,5 @@
+@import './variables';
+
 @mixin position($w, $m) {
   width: $w;
   margin: $m;
@@ -8,4 +10,113 @@
   flex-direction: $fd;
   justify-content: $jc;
   align-items: $ai;
+}
+
+@mixin title($c: $main-content-text) {
+  margin: 0 0 $indent-min 0;
+  font:
+    $size-42 Nunito,
+    sans-serif;
+  color: $c;
+  text-align: center;
+}
+
+@mixin highlightText($c: $main-content-text) {
+  font:
+    $size-18 Nunito,
+    sans-serif;
+  color: $c;
+}
+
+@mixin link($size) {
+  font:
+    700 $size Nunito,
+    sans-serif;
+  color: $main-content-text;
+  transition: all 0.25s linear;
+}
+
+%wrapper-template {
+  @include position(90%, 0 auto);
+  @include flex(null, space-between, center);
+  padding: $indent-min 0;
+}
+
+%wrapper-content {
+  @include position(80%, 0 auto);
+  padding: $indent-max 0;
+}
+
+%content {
+  @include flex(null, center, center);
+  flex-grow: 1;
+  background: $dark-block-background;
+}
+
+%description {
+  font-size: $size-16;
+  text-align: justify;
+}
+
+@mixin corners($w, $h) {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    width: $w;
+    height: $h;
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+%left-bottom-right-top-corners {
+  &::before {
+    border-left: $border solid $border-color;
+    border-bottom: $border solid $border-color;
+    left: 0;
+    bottom: 0;
+  }
+
+  &::after {
+    border-right: $border solid $border-color;
+    border-top: $border solid $border-color;
+    right: 0;
+    top: 0;
+  }
+}
+
+%left-top-right-bottom-corners {
+  &::before {
+    border-left: $border solid $border-color;
+    border-top: $border solid $border-color;
+    left: 0;
+    top: 0;
+  }
+
+  &::after {
+    border-right: $border solid $border-color;
+    border-bottom: $border solid $border-color;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+%card-active-corners {
+  cursor: default;
+  background: $card-background;
+  @include corners(10%, 15%);
+  @extend %left-bottom-right-top-corners;
+
+  &::before,
+  &::after {
+    transition: all 0.5s ease-out;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+  }
 }

@@ -1,0 +1,19 @@
+.footer {
+  background: $light-block-background;
+
+  .wrapper {
+    @extend %wrapper-template;
+
+    .links {
+      @include flex(null, null, center);
+    }
+
+    .copyright {
+      font-size: $size-14;
+
+      .highlightText {
+        @include highlightText();
+      }
+    }
+  }
+}

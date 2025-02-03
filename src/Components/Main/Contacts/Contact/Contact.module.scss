@@ -1,0 +1,32 @@
+.contact {
+  @include flex(null, null, center);
+
+  &:not(:last-child) {
+    margin: 0 0 $indent-max 0;
+  }
+
+  .icon {
+    @include flex(null, center, center);
+  }
+
+  .icon::before {
+    font-size: $size-42;
+    color: $highlight-text;
+    margin: 0 $indent-min 0 0;
+  }
+
+  .name {
+    @include highlightText();
+    margin: 0 $indent-max 0 0;
+  }
+
+  .text,
+  .link {
+    font-size: $size-14;
+  }
+
+  .link:hover {
+    transition: all 0.25s linear;
+    color: $highlight-text;
+  }
+}
