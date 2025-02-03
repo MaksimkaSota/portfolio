@@ -20,7 +20,13 @@
     margin: 0 $indent-max 0 0;
   }
 
-  .text {
+  .text,
+  .link {
     font-size: $size-14;
+  }
+
+  .link:hover {
+    transition: all 0.25s linear;
+    color: $highlight-text;
   }
 }

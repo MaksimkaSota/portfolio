@@ -28,6 +28,7 @@
 
       .text {
         @extend %description;
+        margin: 0 0 $indent-min 0;
 
         .highlightText {
           @include highlightText();

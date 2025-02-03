@@ -14,7 +14,7 @@ export const Contacts: FC = (): ReactElement => {
         <div className={classes.content}>
           <h3 className={classes.title}>My contacts</h3>
           <Contact icon={Icon.RoundPhone} name="Phone:" text="+375-(29)-637-06-10" />
-          <Contact icon={Icon.RoundMail} name="E-mail:" text="MaksimkaSota@gmail.com" />
+          <Contact icon={Icon.RoundMail} name="E-mail:" link={requestString.mail} />
           <Contact icon={Icon.RoundAddress} name="Address:" text="Republic of Belarus, Minsk" />
           <Contact icon={Icon.RoundLink} name="Links:">
             <div className={classes.links}>

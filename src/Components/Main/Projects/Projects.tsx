@@ -17,9 +17,9 @@ export const Projects: FC = (): ReactElement => {
             subname="The study project"
             className={classes.SN}
             screenshot={SN}
-            description="is a online platform that allows people to create an account and interact with other people.
-            It provides essential social networking features such as profile management, searching for friends and
-            subscribing to them, communicating in a chat."
+            description="is an online platform that allows people to create accounts and interact with others. It
+            provides essential social networking features such as profile management, searching for friends and
+            following them, and communicating via chat."
             technologies="React, Redux, TypeScript, SCSS, Axios, REST API, WebSocket, Formik, ESLint, Jest."
             codeLink={requestString.socialNetworkCode}
             previewLink={requestString.socialNetworkPreview}
@@ -29,9 +29,9 @@ export const Projects: FC = (): ReactElement => {
             subname="The study project"
             className={classes.EC}
             screenshot={EC}
-            description="is a website for creating charts online. Select the chart type, fill data tables, and the
-            chart is done! You can view and save the chart to paste it into Excel, Word, and other programs on
-            your computer. You can get a link to the chart page to share it."
+            description="is a website for creating charts online. Select the chart type, fill in the data tables, and
+            the chart is done! You can view and save the chart to paste into Excel, Word, and other programs on your
+            computer. You can also get a link to the chart page to share it."
             technologies="React, Redux, TypeScript, SCSS, Axios, REST API, Formik, i18next, ESLint."
             codeLink={requestString.easyChartsCode}
             previewLink={requestString.easyChartsPreview}
@@ -41,9 +41,9 @@ export const Projects: FC = (): ReactElement => {
             subname="The pet project"
             className={classes.FP}
             screenshot={FP}
-            description="is something unique which will allow me to show my creativity and ability to
-            work with modern technologies. It will also be a great way to learn new development tools and methods, as
-            well as gain experience working on a real project."
+            description="The Future Project is a unique opportunity that will allow me to showcase my creativity and
+            ability to work with modern technologies. It will also serve as a great way to learn new development tools
+            and methods, as well as gain experience working on a real project."
             technologies="React, Redux, TypeScript."
           />
         </div>

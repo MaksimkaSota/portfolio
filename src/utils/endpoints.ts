@@ -8,6 +8,7 @@ type RequestString = {
   facebook: string;
   instagram: string;
   telegram: string;
+  mail: string;
 };
 
 export const requestString: RequestString = {
@@ -20,4 +21,5 @@ export const requestString: RequestString = {
   facebook: 'https://facebook.com/maksimkasota',
   instagram: 'https://instagram.com/maksimkasota',
   telegram: 'https://t.me/maksimkasota',
+  mail: 'MaksimkaSota@gmail.com',
 };
