@@ -1,5 +1,5 @@
 import { https, params } from 'firebase-functions/v2';
-import * as nodemailer from 'nodemailer';
+import nodemailer from 'nodemailer';
 import cors from 'cors';
 import emailValidator from 'email-validator';
 
