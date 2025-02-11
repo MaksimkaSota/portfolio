@@ -1,7 +1,7 @@
 import type { FC, ReactElement } from 'react';
 import classes from './Projects.module.scss';
 import { ProjectCard } from './ProjectCard/ProjectCard';
-import { requestString } from '../../../utils/endpoints';
+import { requestString } from '../../../services/api/endpoints';
 import SN from '../../../assets/images/projects/SocialNetwork.png';
 import EC from '../../../assets/images/projects/EasyCharts.png';
 import FP from '../../../assets/images/projects/FutureProject.png';

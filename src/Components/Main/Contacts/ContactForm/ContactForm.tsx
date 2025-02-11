@@ -4,7 +4,7 @@ import cn from 'classnames';
 import classes from './ContactForm.module.scss';
 import { FormField } from '../../../Common/FormField/FormField';
 import { Button } from '../../../Common/Button/Button';
-import { ElementName, EmailStatus, FieldName, KeyboardEventCode } from '../../../../utils/enums';
+import { ElementName, EmailStatus, FieldName, KeyboardEventCode } from '../../../../utils/types/enums';
 import type {
   EmailStatusType,
   FieldChangeType,
@@ -13,7 +13,7 @@ import type {
   FormikTouchedType,
   SetStatusType,
   SubmitFormType,
-} from '../../../../utils/types';
+} from '../../../../utils/types/types';
 
 type PropsType = {
   values: FormDataType;

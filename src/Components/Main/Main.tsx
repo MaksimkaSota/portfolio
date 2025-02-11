@@ -5,7 +5,7 @@ import { About } from './About/About';
 import { Skills } from './Skills/Skills';
 import { Projects } from './Projects/Projects';
 import { Contacts } from './Contacts/Contacts';
-import { RoutePath } from '../../utils/enums';
+import { RoutePath } from '../../utils/types/enums';
 
 export const Main: FC = (): ReactElement => {
   return (

@@ -2,14 +2,14 @@ import type { FC, ReactElement } from 'react';
 import { ErrorMessage, Field } from 'formik';
 import cn from 'classnames';
 import classes from './FormField.module.scss';
-import { ElementName } from '../../../utils/enums';
+import { ElementName } from '../../../utils/types/enums';
 import type {
   FieldChangeType,
   FieldKeyDownType,
   FormikErrorsType,
   FormikTouchedType,
   FormikValuesType,
-} from '../../../utils/types';
+} from '../../../utils/types/types';
 
 type PropsType = {
   name: string;

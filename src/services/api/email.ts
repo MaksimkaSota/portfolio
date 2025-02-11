@@ -1,6 +1,6 @@
 import { isAxiosError } from 'axios';
 import { api } from './api';
-import { EmailStatus, FieldName } from '../../utils/enums';
+import { EmailStatus, FieldName } from '../../utils/types/enums';
 import type {
   EmailStatusType,
   FormDataType,
@@ -8,7 +8,7 @@ import type {
   SetFieldValueType,
   SetStatusType,
   SetSubmittingType,
-} from '../../utils/types';
+} from '../../utils/types/types';
 
 export const sendEmail = async (
   formData: FormDataType,

@@ -3,8 +3,8 @@ import { Formik, type FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 import { ContactForm } from './ContactForm';
 import { sendEmail } from '../../../../services/api/email';
-import type { EmailStatusType, FormDataType } from '../../../../utils/types';
-import { EmailStatus } from '../../../../utils/enums';
+import type { EmailStatusType, FormDataType } from '../../../../utils/types/types';
+import { EmailStatus } from '../../../../utils/types/enums';
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
