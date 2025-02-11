@@ -38,11 +38,11 @@
       .container {
         @include flex(null, space-between, center);
 
-        .educationBlock .education {
+        .educationContainer .education {
           @include highlightText();
         }
 
-        .educationBlock .speciality {
+        .educationContainer .speciality {
           font-size: $size-14;
         }
       }

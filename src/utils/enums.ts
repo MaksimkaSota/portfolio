@@ -36,6 +36,16 @@ export enum ElementName {
   TypeReset = 'reset',
 }
 
+export enum EmailStatus {
+  Sending = 'sending',
+  Success = 'success',
+  Failure = 'failure',
+}
+
+export enum KeyboardEventCode {
+  Enter = 'Enter',
+}
+
 export enum Language {
   En = 'en',
   Ru = 'ru',

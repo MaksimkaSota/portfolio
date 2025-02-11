@@ -32,5 +32,30 @@
         background: $disabled-button-background;
       }
     }
+
+    .statusContainer {
+      position: relative;
+      z-index: 2;
+
+      .status {
+        width: 100%;
+        text-align: center;
+        font-size: $size-12;
+        position: absolute;
+        top: 10px;
+      }
+
+      .statusSending {
+        color: $content-text;
+      }
+
+      .successStatus {
+        color: $success;
+      }
+
+      .failureStatus {
+        color: $error;
+      }
+    }
   }
 }

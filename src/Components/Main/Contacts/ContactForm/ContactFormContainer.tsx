@@ -1,9 +1,10 @@
-import type { FC, ReactElement } from 'react';
+import { type FC, type ReactElement, useState } from 'react';
 import { Formik, type FormikHelpers } from 'formik';
 import * as Yup from 'yup';
-import axios, { isAxiosError } from 'axios';
 import { ContactForm } from './ContactForm';
-import { FieldName } from '../../../../utils/enums';
+import { sendEmail } from '../../../../services/api/email';
+import type { EmailStatusType, FormDataType } from '../../../../utils/types';
+import { EmailStatus } from '../../../../utils/enums';
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
@@ -17,31 +18,14 @@ const validationSchema = Yup.object().shape({
   message: Yup.string().required('Required message'),
 });
 
-export type FormDataType = {
-  name: string;
-  email: string;
-  message: string;
-};
-
 export const ContactFormContainer: FC = (): ReactElement => {
+  const [emailStatus, setEmailStatus] = useState<EmailStatusType>(EmailStatus.Sending);
+
   const onSubmit = async (
     formData: FormDataType,
-    { setFieldValue, setFieldTouched }: FormikHelpers<FormDataType>
+    { setFieldValue, setFieldTouched, setSubmitting, setStatus }: FormikHelpers<FormDataType>
   ): Promise<void> => {
-    try {
-      await axios.post(process.env.REACT_APP_SENDEMAIL_SERVER_LINK as string, formData);
-
-      console.log('Successfully sent email');
-      alert('Successfully sent email');
-
-      setFieldValue(FieldName.Message, '');
-      setFieldTouched(FieldName.Message, false);
-    } catch (error: unknown) {
-      if (isAxiosError(error)) {
-        console.error(error.response?.data.error || error.message);
-        alert(error.response?.data.error || error.message);
-      }
-    }
+    await sendEmail(formData, setFieldValue, setFieldTouched, setSubmitting, setStatus, setEmailStatus);
   };
 
   return (
@@ -54,8 +38,29 @@ export const ContactFormContainer: FC = (): ReactElement => {
       validationSchema={validationSchema}
       onSubmit={onSubmit}
     >
-      {({ values, touched, errors, isValid }): ReactElement => (
-        <ContactForm values={values} touched={touched} errors={errors} isValid={isValid} />
+      {({
+        values,
+        status,
+        touched,
+        errors,
+        isValid,
+        isSubmitting,
+        handleChange,
+        setStatus,
+        submitForm,
+      }): ReactElement => (
+        <ContactForm
+          values={values}
+          status={status}
+          emailStatus={emailStatus}
+          touched={touched}
+          errors={errors}
+          isValid={isValid}
+          isSubmitting={isSubmitting}
+          handleChange={handleChange}
+          setStatus={setStatus}
+          submitForm={submitForm}
+        />
       )}
     </Formik>
   );

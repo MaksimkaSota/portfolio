@@ -17,29 +17,29 @@ export const sendEmail = https.onRequest(
   async (req, res) => {
     corsHandler(req, res, async () => {
       if (!gmailEmail.value() || !gmailPassword.value()) {
-        res.status(500).send({ success: false, error: 'Internal server error' });
+        res.status(500).send({ success: false, error: 'Internal server error.' });
         return;
       }
 
       if (req.method !== 'POST') {
-        res.status(405).send({ success: false, error: 'Method not allowed' });
+        res.status(405).send({ success: false, error: 'Method not allowed.' });
         return;
       }
 
       const { name, email, message } = req.body;
 
       if (!name || !email || !message) {
-        res.status(400).send({ success: false, error: 'Missing required fields' });
+        res.status(400).send({ success: false, error: 'Missing required fields.' });
         return;
       }
 
       if (name.length > 100 || email.length > 100 || message.length > 5000) {
-        res.status(400).send({ success: false, error: 'Input exceeds allowed length' });
+        res.status(400).send({ success: false, error: 'Input too long.' });
         return;
       }
 
       if (!emailValidator.validate(email)) {
-        res.status(400).send({ success: false, error: 'Invalid email address' });
+        res.status(400).send({ success: false, error: 'Invalid email address.' });
         return;
       }
 
@@ -65,7 +65,7 @@ export const sendEmail = https.onRequest(
         res.status(200).send({ success: true });
       } catch (error) {
         console.error('Error sending email:', error);
-        res.status(500).send({ success: false, error: 'Failed to send email' });
+        res.status(500).send({ success: false, error: 'Some server error.' });
       }
     });
   }

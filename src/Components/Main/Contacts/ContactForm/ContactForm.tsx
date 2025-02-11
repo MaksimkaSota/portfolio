@@ -1,21 +1,57 @@
-import type { FC, ReactElement } from 'react';
+import type { ChangeEvent, FC, ReactElement } from 'react';
 import { Form } from 'formik';
+import cn from 'classnames';
 import classes from './ContactForm.module.scss';
 import { FormField } from '../../../Common/FormField/FormField';
 import { Button } from '../../../Common/Button/Button';
-import { ElementName, FieldName } from '../../../../utils/enums';
-import type { FormDataType } from './ContactFormContainer';
-import type { FormikErrorsType, FormikTouchedType } from '../../../../utils/types';
+import { ElementName, EmailStatus, FieldName, KeyboardEventCode } from '../../../../utils/enums';
+import type {
+  EmailStatusType,
+  FieldChangeType,
+  FormDataType,
+  FormikErrorsType,
+  FormikTouchedType,
+  SetStatusType,
+  SubmitFormType,
+} from '../../../../utils/types';
 
 type PropsType = {
   values: FormDataType;
+  status: string;
+  emailStatus: EmailStatusType;
   touched: FormikTouchedType;
   errors: FormikErrorsType;
   isValid: boolean;
+  isSubmitting: boolean;
+  handleChange: FieldChangeType;
+  setStatus: SetStatusType;
+  submitForm: SubmitFormType;
 };
 
-export const ContactForm: FC<PropsType> = ({ values, touched, errors, isValid }): ReactElement => {
+export const ContactForm: FC<PropsType> = ({
+  values,
+  status,
+  emailStatus,
+  touched,
+  errors,
+  isValid,
+  isSubmitting,
+  handleChange,
+  setStatus,
+  submitForm,
+}): ReactElement => {
   const isFormValid = !isValid && Object.keys(errors).some((key) => touched[key]);
+
+  const onFieldChange = (event: ChangeEvent<HTMLElement>): void => {
+    handleChange(event);
+    setStatus('');
+  };
+
+  const onFieldKeyDown = (event: KeyboardEvent): void => {
+    if (event.code === KeyboardEventCode.Enter && !event.shiftKey) {
+      submitForm();
+    }
+  };
 
   return (
     <Form className={classes.contactForm}>
@@ -25,32 +61,54 @@ export const ContactForm: FC<PropsType> = ({ values, touched, errors, isValid })
           name={FieldName.Name}
           type={ElementName.TypeText}
           placeholder="Name"
+          disabled={isSubmitting}
           values={values}
           touched={touched}
           errors={errors}
+          onChange={onFieldChange}
+          onKeyDown={onFieldKeyDown}
         />
         <FormField
           name={FieldName.Email}
           type={ElementName.TypeText}
           placeholder="Email"
+          disabled={isSubmitting}
           values={values}
           touched={touched}
           errors={errors}
+          onChange={onFieldChange}
+          onKeyDown={onFieldKeyDown}
         />
         <FormField
           name={FieldName.Message}
           component={ElementName.Textarea}
-          placeholder="Message"
+          placeholder={`Message\n\n\n\nShift+Enter for new line`}
+          disabled={isSubmitting}
           values={values}
           touched={touched}
           errors={errors}
+          onChange={onFieldChange}
+          onKeyDown={onFieldKeyDown}
         />
         <Button
           text="Send message"
           type={ElementName.TypeSubmit}
           className={classes.sendButton}
-          disabled={isFormValid}
+          disabled={isFormValid || isSubmitting}
         />
+        <div className={classes.statusContainer}>
+          {status && (
+            <p
+              className={cn(classes.status, {
+                [classes.statusSending]: emailStatus === EmailStatus.Sending,
+                [classes.successStatus]: emailStatus === EmailStatus.Success,
+                [classes.failureStatus]: emailStatus === EmailStatus.Failure,
+              })}
+            >
+              {status}
+            </p>
+          )}
+        </div>
       </div>
     </Form>
   );

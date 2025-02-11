@@ -3,16 +3,25 @@ import { ErrorMessage, Field } from 'formik';
 import cn from 'classnames';
 import classes from './FormField.module.scss';
 import { ElementName } from '../../../utils/enums';
-import type { FormikErrorsType, FormikTouchedType, FormikValuesType } from '../../../utils/types';
+import type {
+  FieldChangeType,
+  FieldKeyDownType,
+  FormikErrorsType,
+  FormikTouchedType,
+  FormikValuesType,
+} from '../../../utils/types';
 
 type PropsType = {
   name: string;
   component?: string;
   type?: string;
   placeholder: string;
+  disabled: boolean;
   values: FormikValuesType;
   touched: FormikTouchedType;
   errors: FormikErrorsType;
+  onChange: FieldChangeType;
+  onKeyDown: FieldKeyDownType;
 };
 
 export const FormField: FC<PropsType> = ({

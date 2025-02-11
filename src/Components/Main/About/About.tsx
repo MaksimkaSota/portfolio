@@ -23,7 +23,7 @@ export const About: FC = (): ReactElement => {
             creating solutions that meet their requirements.
           </p>
           <div className={classes.container}>
-            <div className={classes.educationBlock}>
+            <div className={classes.educationContainer}>
               <p className={classes.education}>Belarusian National Technical University</p>
               <p className={classes.speciality}>Mechanical Engineering</p>
               <p className={classes.education}>Computer Academy STEP</p>
