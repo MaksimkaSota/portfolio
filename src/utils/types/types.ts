@@ -1,4 +1,4 @@
-import type { ChangeEvent } from 'react';
+import type { ChangeEvent, KeyboardEvent } from 'react';
 import type { FormikErrors } from 'formik';
 import type { EmailStatus } from './enums';
 
@@ -34,6 +34,6 @@ export type SubmitFormType = () => Promise<any>;
 
 export type FieldChangeType = (event: ChangeEvent<any>) => void;
 
-export type FieldKeyDownType = (event: KeyboardEvent) => void;
+export type FieldKeyDownType = (event: KeyboardEvent<any>) => void;
 
 export type EmailStatusType = EmailStatus.Sending | EmailStatus.Success | EmailStatus.Failure;

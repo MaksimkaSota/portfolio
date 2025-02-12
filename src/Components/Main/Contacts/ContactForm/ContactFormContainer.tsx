@@ -21,11 +21,11 @@ const validationSchema = Yup.object().shape({
 export const ContactFormContainer: FC = (): ReactElement => {
   const [emailStatus, setEmailStatus] = useState<EmailStatusType>(EmailStatus.Sending);
 
-  const onSubmit = async (
+  const onSubmit = (
     formData: FormDataType,
     { setFieldValue, setFieldTouched, setSubmitting, setStatus }: FormikHelpers<FormDataType>
-  ): Promise<void> => {
-    await sendEmail(formData, setFieldValue, setFieldTouched, setSubmitting, setStatus, setEmailStatus);
+  ): void => {
+    sendEmail(formData, setFieldValue, setFieldTouched, setSubmitting, setStatus, setEmailStatus);
   };
 
   return (

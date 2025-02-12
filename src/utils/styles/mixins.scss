@@ -21,19 +21,19 @@
   text-align: center;
 }
 
-@mixin highlightText($c: $main-content-text) {
-  font:
-    $size-18 Nunito,
-    sans-serif;
-  color: $c;
-}
-
 @mixin link($size) {
   font:
     700 $size Nunito,
     sans-serif;
   color: $main-content-text;
   transition: all 0.25s linear;
+}
+
+%highlightText {
+  font:
+    $size-18 Nunito,
+    sans-serif;
+  color: $main-content-text;
 }
 
 %wrapper-template {

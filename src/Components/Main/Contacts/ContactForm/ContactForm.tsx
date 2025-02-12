@@ -1,4 +1,4 @@
-import type { ChangeEvent, FC, ReactElement } from 'react';
+import type { ChangeEvent, FC, KeyboardEvent, ReactElement } from 'react';
 import { Form } from 'formik';
 import cn from 'classnames';
 import classes from './ContactForm.module.scss';
@@ -42,12 +42,12 @@ export const ContactForm: FC<PropsType> = ({
 }): ReactElement => {
   const isFormValid = !isValid && Object.keys(errors).some((key) => touched[key]);
 
-  const onFieldChange = (event: ChangeEvent<HTMLElement>): void => {
+  const onFieldChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     handleChange(event);
     setStatus('');
   };
 
-  const onFieldKeyDown = (event: KeyboardEvent): void => {
+  const onFieldKeyDown = (event: KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     if (event.code === KeyboardEventCode.Enter && !event.shiftKey) {
       submitForm();
     }

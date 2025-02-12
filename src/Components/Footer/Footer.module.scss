@@ -12,7 +12,7 @@
       font-size: $size-14;
 
       .highlightText {
-        @include highlightText();
+        @extend %highlightText;
       }
     }
   }

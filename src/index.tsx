@@ -7,13 +7,16 @@ import { StrictMode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import { App } from './Components/App';
+import { ErrorCatcher } from './Components/Common/Errors/ErrorCatcher/ErrorCatcher';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <ErrorCatcher>
+        <App />
+      </ErrorCatcher>
     </BrowserRouter>
   </StrictMode>
 );

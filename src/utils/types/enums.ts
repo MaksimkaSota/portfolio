@@ -44,6 +44,7 @@ export enum EmailStatus {
 
 export enum KeyboardEventCode {
   Enter = 'Enter',
+  Escape = 'Escape',
 }
 
 export enum Language {

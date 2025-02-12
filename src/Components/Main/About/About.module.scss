@@ -31,7 +31,7 @@
         margin: 0 0 $indent-min 0;
 
         .highlightText {
-          @include highlightText();
+          @extend %highlightText;
         }
       }
 
@@ -39,7 +39,7 @@
         @include flex(null, space-between, center);
 
         .educationContainer .education {
-          @include highlightText();
+          @extend %highlightText;
         }
 
         .educationContainer .speciality {
