@@ -44,6 +44,11 @@ declare module '*.webp' {
   export default src;
 }
 
+declare module '*.pdf' {
+  const src: string;
+  export default src;
+}
+
 declare module '*.svg' {
   import type * as React from 'react';
 

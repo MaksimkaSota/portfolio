@@ -1,7 +1,7 @@
 import type { FC, ReactElement } from 'react';
 import classes from './About.module.scss';
-import { DownloadButton } from '../../Common/DownloadButton/DownloadButton';
 import portrait from '../../../assets/images/portrait.jpg';
+import CV from '../../../assets/documents/CV.pdf';
 
 export const About: FC = (): ReactElement => {
   return (
@@ -31,7 +31,9 @@ export const About: FC = (): ReactElement => {
               <p className={classes.education}>The Rolling Scopes School</p>
               <p className={classes.speciality}>JavaScript/Front-end</p>
             </div>
-            <DownloadButton />
+            <a className={classes.downloadButton} href={CV} download="Maksim Sotnikov">
+              Download CV
+            </a>
           </div>
         </div>
       </div>

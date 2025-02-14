@@ -45,6 +45,15 @@
         .educationContainer .speciality {
           font-size: $size-14;
         }
+
+        .downloadButton {
+          @extend %button;
+          @include position(200px, 0 auto);
+
+          &:hover {
+            background: $light-block-background;
+          }
+        }
       }
     }
   }
