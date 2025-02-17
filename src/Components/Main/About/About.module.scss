@@ -31,19 +31,28 @@
         margin: 0 0 $indent-min 0;
 
         .highlightText {
-          @include highlightText();
+          @extend %highlightText;
         }
       }
 
       .container {
         @include flex(null, space-between, center);
 
-        .educationBlock .education {
-          @include highlightText();
+        .educationContainer .education {
+          @extend %highlightText;
         }
 
-        .educationBlock .speciality {
+        .educationContainer .speciality {
           font-size: $size-14;
+        }
+
+        .downloadButton {
+          @extend %button;
+          @include position(200px, 0 auto);
+
+          &:hover {
+            background: $light-block-background;
+          }
         }
       }
     }

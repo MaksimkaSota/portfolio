@@ -21,19 +21,19 @@
   text-align: center;
 }
 
-@mixin highlightText($c: $main-content-text) {
-  font:
-    $size-18 Nunito,
-    sans-serif;
-  color: $c;
-}
-
 @mixin link($size) {
   font:
     700 $size Nunito,
     sans-serif;
   color: $main-content-text;
   transition: all 0.25s linear;
+}
+
+%highlightText {
+  font:
+    $size-18 Nunito,
+    sans-serif;
+  color: $main-content-text;
 }
 
 %wrapper-template {
@@ -118,5 +118,22 @@
   &:hover::after {
     width: 100%;
     height: 100%;
+  }
+}
+
+%button {
+  padding: $button-indent 0;
+  font:
+    700 $size-16 Nunito,
+    sans-serif;
+  text-align: center;
+  color: $main-content-text;
+  background: $button-background;
+  outline: $border solid $border-color;
+  outline-offset: -$border;
+  transition: all 0.25s linear;
+
+  &:hover {
+    cursor: pointer;
   }
 }

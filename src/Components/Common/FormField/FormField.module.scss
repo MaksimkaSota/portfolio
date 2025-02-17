@@ -23,10 +23,19 @@
       outline-offset: -$border;
       caret-color: $highlight-text;
     }
+
+    &:disabled {
+      cursor: default;
+      color: $content-text;
+
+      &:-webkit-autofill {
+        -webkit-text-fill-color: $content-text;
+      }
+    }
   }
 
   .textarea {
-    height: 100px;
+    height: 105px;
     resize: none;
   }
 

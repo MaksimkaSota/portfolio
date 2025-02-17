@@ -3,8 +3,8 @@ import classes from './Contacts.module.scss';
 import { ContactFormContainer } from './ContactForm/ContactFormContainer';
 import { Contact } from './Contact/Contact';
 import { Link } from '../../Common/Link/Link';
-import { Icon } from '../../../utils/enums';
-import { requestString } from '../../../utils/endpoints';
+import { Icon } from '../../../utils/types/enums';
+import { requestString } from '../../../services/api/endpoints';
 
 export const Contacts: FC = (): ReactElement => {
   return (

@@ -7,7 +7,7 @@
   @extend %left-bottom-right-top-corners;
 
   .formTitle {
-    @include highlightText();
+    @extend %highlightText;
     margin: 0 0 $indent-min 0;
     text-align: center;
   }
@@ -30,6 +30,31 @@
         cursor: default;
         outline-color: $error;
         background: $disabled-button-background;
+      }
+    }
+
+    .statusContainer {
+      position: relative;
+      z-index: 2;
+
+      .status {
+        width: 100%;
+        text-align: center;
+        font-size: $size-12;
+        position: absolute;
+        top: 10px;
+      }
+
+      .statusSending {
+        color: $content-text;
+      }
+
+      .successStatus {
+        color: $success;
+      }
+
+      .failureStatus {
+        color: $error;
       }
     }
   }

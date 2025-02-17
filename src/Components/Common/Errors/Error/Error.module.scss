@@ -1,0 +1,25 @@
+.error {
+  width: 100%;
+  @include flex(column, null, center);
+  background: $dark-block-background;
+
+  .errorTitle {
+    @include title($error);
+  }
+
+  .errorImage {
+    width: 35%;
+    filter: drop-shadow(0 0 5px $border-color);
+  }
+
+  .errorMessage {
+    margin: $indent-min 0 0;
+    font-size: $size-16;
+    z-index: 3;
+  }
+}
+
+.globalError {
+  height: 100vh;
+  justify-content: center;
+}

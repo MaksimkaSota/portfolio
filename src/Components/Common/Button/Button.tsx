@@ -1,7 +1,7 @@
 import type { FC, ReactElement } from 'react';
 import cn from 'classnames';
 import classes from './Button.module.scss';
-import { ElementName } from '../../../utils/enums';
+import { ElementName } from '../../../utils/types/enums';
 
 type PropsType = {
   text: string;

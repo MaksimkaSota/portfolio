@@ -1,13 +1,13 @@
 # About Page
 
-My portfolio [Maksim Sotnikov](https://...).
+My portfolio [Maksim Sotnikov](https://portfolio-76e85.web.app).
 
-I am a Frontend developer with a focus on creating interactive and user-friendly web applications.  
-My toolkit includes React, Redux, JavaScript, TypeScript, and much more to build scalable and maintainable
+I am a Frontend developer focused on creating interactive and user-friendly web applications.  
+My toolkit includes React, Redux, JavaScript, TypeScript, as well as many other tools to build scalable and maintainable
 user interfaces.
 
 My goal is to create intuitive and engaging web applications.
-I am committed to staying up-to-date with the latest technologies and trends in web development to ensure that my work
+I am committed to staying up to date with the latest technologies and trends in web development to ensure that my work
 remains relevant and effective. I believe that web development is not just about coding, but also about understanding
 the needs of users and creating solutions that meet their requirements.
 

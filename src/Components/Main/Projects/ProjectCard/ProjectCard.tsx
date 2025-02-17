@@ -2,7 +2,7 @@ import type { FC, ReactElement } from 'react';
 import cn from 'classnames';
 import classes from './ProjectCard.module.scss';
 import { Link } from '../../../Common/Link/Link';
-import { Icon } from '../../../../utils/enums';
+import { Icon } from '../../../../utils/types/enums';
 
 type PropsType = {
   name: string;

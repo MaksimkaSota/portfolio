@@ -1,8 +1,8 @@
 import type { FC, ReactElement } from 'react';
 import classes from './Footer.module.scss';
 import { Link } from '../Common/Link/Link';
-import { Icon } from '../../utils/enums';
-import { requestString } from '../../utils/endpoints';
+import { Icon } from '../../utils/types/enums';
+import { requestString } from '../../services/api/endpoints';
 
 export const Footer: FC = (): ReactElement => {
   return (
