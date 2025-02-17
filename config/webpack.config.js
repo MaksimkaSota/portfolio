@@ -182,15 +182,6 @@ module.exports = function (webpackEnv) {
           },
         }
       );
-      loaders.push({
-        loader: 'sass-resources-loader',
-        options: {
-          resources: [
-            'src/utils/styles/mixins.scss',
-            'src/utils/styles/variables.scss'
-          ],
-        },
-      });
     }
     return loaders;
   };

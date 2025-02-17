@@ -1,3 +1,5 @@
+@use '../../../../utils/styles/global' as *;
+
 .error {
   width: 100%;
   @include flex(column, null, center);
