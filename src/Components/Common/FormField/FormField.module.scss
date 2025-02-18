@@ -1,3 +1,5 @@
+@use '../../../utils/styles/global' as *;
+
 .formField {
   @include flex(column, null, null);
   position: relative;

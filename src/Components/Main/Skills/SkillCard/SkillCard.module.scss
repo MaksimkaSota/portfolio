@@ -1,3 +1,5 @@
+@use '../../../../utils/styles/global' as *;
+
 .skillCard {
   @include flex(column, null, center);
   @extend %card-active-corners;

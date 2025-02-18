@@ -1,3 +1,5 @@
+@use '../../../../utils/styles/global' as *;
+
 .projectCard {
   @include flex(column, null, null);
   @extend %card-active-corners;
