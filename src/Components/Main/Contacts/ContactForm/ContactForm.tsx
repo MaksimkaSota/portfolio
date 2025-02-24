@@ -3,7 +3,7 @@ import { Form } from 'formik';
 import cn from 'classnames';
 import classes from './ContactForm.module.scss';
 import { FormField } from '../../../Common/FormField/FormField';
-import { Button } from '../../../Common/Button/Button';
+import { Button } from '../../../Common/Buttons/Button/Button';
 import { ElementName, EmailStatus, FieldName, KeyboardEventCode } from '../../../../utils/types/enums';
 import type {
   EmailStatusType,
