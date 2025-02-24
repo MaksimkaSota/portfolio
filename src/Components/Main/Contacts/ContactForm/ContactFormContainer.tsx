@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import { ContactForm } from './ContactForm';
 import { sendEmail } from '../../../../services/api/email';
 import type { EmailStatusType, FormDataType } from '../../../../utils/types/types';
-import { EmailStatus } from '../../../../utils/types/enums';
+import { EmailStatus, FieldName } from '../../../../utils/types/enums';
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
@@ -31,9 +31,9 @@ export const ContactFormContainer: FC = (): ReactElement => {
   return (
     <Formik
       initialValues={{
-        name: '',
-        email: '',
-        message: '',
+        name: localStorage.getItem(FieldName.Name) || '',
+        email: localStorage.getItem(FieldName.Email) || '',
+        message: localStorage.getItem(FieldName.Message) || '',
       }}
       validationSchema={validationSchema}
       onSubmit={onSubmit}

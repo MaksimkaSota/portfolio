@@ -26,6 +26,7 @@ export const sendEmail = async (
     setEmailStatus(EmailStatus.Success);
     setFieldValue(FieldName.Message, '');
     setFieldTouched(FieldName.Message, false);
+    localStorage.removeItem(FieldName.Message);
   } catch (error: unknown) {
     if (isAxiosError(error)) {
       setStatus(`Sending error. ${error.response?.data.error || error.message}`);
