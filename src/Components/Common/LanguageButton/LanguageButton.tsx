@@ -4,13 +4,14 @@ import { Button } from '../Button/Button';
 import { Language } from '../../../utils/types/enums';
 
 export const LanguageButton: FC = (): ReactElement => {
-  const [languageMode, setLanguageMode] = useState<string>(Language.Ru);
+  const [languageMode, setLanguageMode] = useState<string>(localStorage.getItem(Language.Key) || Language.En);
 
-  const text = languageMode === Language.Ru ? 'ENG' : 'RU';
+  const text = languageMode === Language.En ? 'ENG' : 'RU';
 
   const onLanguageMode = (): void => {
-    const newLanguageMode = languageMode === Language.Ru ? Language.En : Language.Ru;
+    const newLanguageMode = languageMode === Language.En ? Language.Ru : Language.En;
     setLanguageMode(newLanguageMode);
+    localStorage.setItem(Language.Key, newLanguageMode);
   };
 
   return <Button text={text} className={classes.languageButton} onClick={onLanguageMode} />;

@@ -48,6 +48,7 @@ export enum KeyboardEventCode {
 }
 
 export enum Language {
+  Key = 'language',
   En = 'en',
   Ru = 'ru',
 }
