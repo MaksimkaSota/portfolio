@@ -21,6 +21,7 @@ $shadow: $light-pale-orange;
 $error: $brick-red;
 $success: $soft-green;
 
+$size-10: 0.625rem;
 $size-12: 0.75rem;
 $size-14: 0.875rem;
 $size-16: 1rem;
@@ -32,3 +33,23 @@ $button-indent: 5px;
 $indent-min: 10px;
 $indent-max: 20px;
 $border: 2px;
+
+$laptop-size: 64em;
+$tablet-size: 48em;
+$mobile-size: 20em;
+
+$laptop: laptop;
+$tablet: tablet;
+$mobile: mobile;
+
+$breakpoints: (
+  $laptop: (
+    max-width: $laptop-size,
+  ),
+  $tablet: (
+    max-width: $tablet-size,
+  ),
+  $mobile: (
+    max-width: $mobile-size,
+  ),
+);

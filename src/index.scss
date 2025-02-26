@@ -1,4 +1,5 @@
 @use './utils/styles/variables' as *;
+@use './utils/styles/mixins' as *;
 
 *,
 *::before,
@@ -20,6 +21,18 @@ body {
     'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @include respond($laptop) {
+    font-size: $size-14;
+  }
+
+  @include respond($tablet) {
+    font-size: $size-12;
+  }
+
+  @include respond($mobile) {
+    font-size: $size-10;
+  }
 }
 
 input,

@@ -10,7 +10,7 @@ export const About: FC = (): ReactElement => {
         <img className={classes.portrait} src={portrait} alt="Portrait" />
         <div className={classes.content}>
           <h3 className={classes.title}>About me</h3>
-          <h1 className={classes.mainTitle}>Hello World, I am Maksim Sotnikov</h1>
+          <h1 className={classes.mainTitle}>I am Maksim Sotnikov</h1>
           <p className={classes.text}>
             I am a <span className={classes.highlightText}>Frontend developer</span> focused on creating interactive and
             user-friendly web applications. My toolkit includes React, Redux, JavaScript, TypeScript, as well as many
