@@ -3,7 +3,7 @@ import { Form } from 'formik';
 import cn from 'classnames';
 import classes from './ContactForm.module.scss';
 import { FormField } from '../../../Common/FormField/FormField';
-import { Button } from '../../../Common/Button/Button';
+import { Button } from '../../../Common/Buttons/Button/Button';
 import { ElementName, EmailStatus, FieldName, KeyboardEventCode } from '../../../../utils/types/enums';
 import type {
   EmailStatusType,
@@ -42,9 +42,10 @@ export const ContactForm: FC<PropsType> = ({
 }): ReactElement => {
   const isFormValid = !isValid && Object.keys(errors).some((key) => touched[key]);
 
-  const onFieldChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+  const onFieldChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, name: string): void => {
     handleChange(event);
     setStatus('');
+    localStorage.setItem(name, event.target.value);
   };
 
   const onFieldKeyDown = (event: KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
@@ -65,7 +66,7 @@ export const ContactForm: FC<PropsType> = ({
           values={values}
           touched={touched}
           errors={errors}
-          onChange={onFieldChange}
+          onChange={(event) => onFieldChange(event, FieldName.Name)}
           onKeyDown={onFieldKeyDown}
         />
         <FormField
@@ -76,7 +77,7 @@ export const ContactForm: FC<PropsType> = ({
           values={values}
           touched={touched}
           errors={errors}
-          onChange={onFieldChange}
+          onChange={(event) => onFieldChange(event, FieldName.Email)}
           onKeyDown={onFieldKeyDown}
         />
         <FormField
@@ -87,7 +88,7 @@ export const ContactForm: FC<PropsType> = ({
           values={values}
           touched={touched}
           errors={errors}
-          onChange={onFieldChange}
+          onChange={(event) => onFieldChange(event, FieldName.Message)}
           onKeyDown={onFieldKeyDown}
         />
         <Button
