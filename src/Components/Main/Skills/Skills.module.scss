@@ -81,6 +81,33 @@
       .Figma {
         grid-area: Figma;
       }
+
+      @include respond($laptop) {
+        gap: $button-indent;
+      }
+
+      @include respond($tablet) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+        'HTML CSS Less Sass'
+        'JS TS React Redux'
+        'Jest Webpack ESLint Prettier'
+        'Git GH WS Figma';
+      }
+
+      @include respond($mobile) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $indent-min;
+        grid-template-areas:
+        'HTML CSS'
+        'Less Sass'
+        'JS TS'
+        'React Redux'
+        'Jest Webpack'
+        'ESLint Prettier'
+        'Git GH'
+        'WS Figma';
+      }
     }
   }
 }

@@ -13,7 +13,7 @@
     @include flex(null, center, center);
     width: 50px;
     height: 50px;
-    margin: 0 0 $indent-max 0;
+    margin: 0 0 $indent-max;
 
     .logo {
       width: 100%;
@@ -26,5 +26,23 @@
     font:
       $size-16 Nunito,
       sans-serif;
+  }
+
+  @include respond($laptop) {
+    padding: $indent-max 0 $indent-min;
+
+    .logoContainer {
+      width: 35px;
+      height: 35px;
+      margin: 0 0 $indent-min;
+    }
+  }
+
+  @include respond($tablet) {
+    padding: $indent-max 0;
+
+    .logoContainer {
+      margin: 0 0 $indent-max;
+    }
   }
 }

@@ -29,6 +29,10 @@
     sans-serif;
   color: $c;
   text-align: center;
+
+  @include respond($tablet) {
+    font-size: $size-32;
+  }
 }
 
 @mixin link($size) {

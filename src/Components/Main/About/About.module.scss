@@ -86,7 +86,6 @@
 
         .title {
           @include position(100%, 0 auto);
-          font-size: $size-32;
           position: absolute;
           top: $indent-min;
         }

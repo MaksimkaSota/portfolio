@@ -32,10 +32,15 @@
     z-index: 1;
     overflow: hidden;
     transition: width 0.25s linear;
-    backdrop-filter: blur(10px);
+    background: $shadow;
+    backdrop-filter: blur(5px);
 
-    .link:not(:last-child) {
-      margin: 0;
+    .link {
+      font-size: $size-20;
+
+      &:not(:last-child) {
+        margin: 0;
+      }
     }
   }
 }
