@@ -1,15 +1,27 @@
-import type { FC, ReactElement } from 'react';
+import type { Dispatch, FC, MouseEvent, ReactElement, SetStateAction } from 'react';
 import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
 import classes from './Navigation.module.scss';
 import { RoutePath } from '../../../utils/types/enums';
 
-export const Navigation: FC = (): ReactElement => {
+type PropsType = {
+  showBurgerMenu: boolean;
+  setShowBurgerMenu: Dispatch<SetStateAction<boolean>>;
+};
+
+export const Navigation: FC<PropsType> = ({ showBurgerMenu, setShowBurgerMenu }): ReactElement => {
   const setClass = ({ isActive }: { isActive: boolean }): string =>
     cn(classes.link, { [classes.activeLink]: isActive });
 
+  const onLinkClick = (event: MouseEvent<HTMLAnchorElement>): void => {
+    if ((event.target as Element).className === classes.link) {
+      setShowBurgerMenu(false);
+    }
+  };
+
   return (
-    <nav className={classes.navigation}>
+    // eslint-disable-next-line
+    <nav className={cn(classes.navigation, { [classes.shownNavigation]: showBurgerMenu })} onClick={onLinkClick}>
       <NavLink to={RoutePath.About} className={setClass}>
         About
       </NavLink>

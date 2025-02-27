@@ -17,5 +17,18 @@
         @extend %highlightText;
       }
     }
+
+    @include respond($tablet) {
+      .copyright {
+        width: 110px;
+        text-align: right;
+      }
+    }
+
+    @include respond($mobile) {
+      .copyright {
+        width: 100px;
+      }
+    }
   }
 }

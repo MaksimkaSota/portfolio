@@ -78,15 +78,15 @@
       position: relative;
 
       .portrait {
-        width: 50%;
-        margin: 96px 0 $indent-min;
+        @include position(50%, 75.6px 0 $indent-min);
       }
 
       .content {
         width: 100%;
 
         .title {
-          @include position(100%, 0 auto $indent-min);
+          @include position(100%, 0 auto);
+          font-size: $size-32;
           position: absolute;
           top: $indent-min;
         }
@@ -94,7 +94,7 @@
         .mainTitle {
           @include position(100%, 0 auto $indent-min);
           position: absolute;
-          top: 63.2px;
+          top: 42.8px;
         }
 
         .container {
@@ -114,12 +114,11 @@
 
     @include respond($mobile) {
       .portrait {
-        width: 70%;
-        margin: 83.2px 0 $indent-min;
+        @include position(70%, 64.4px 0 $indent-min);
       }
 
       .content .mainTitle {
-        top: 56px;
+        top: 37.2px;
       }
 
       .content .container .downloadButton {
