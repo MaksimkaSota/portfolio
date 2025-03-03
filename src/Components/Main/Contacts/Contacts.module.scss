@@ -1,4 +1,4 @@
-@use '../../../utils/styles/mixins' as *;
+@use '../../../utils/styles/global' as *;
 
 .contacts {
   @extend %content;
@@ -17,6 +17,36 @@
 
       .links {
         @include flex(null, null, center);
+      }
+    }
+
+    @include respond($laptop) {
+      .content {
+        width: 50%;
+
+        .links {
+          @include flex(column, null, flex-start);
+          gap: $indent-min;
+        }
+      }
+    }
+
+    @include respond($tablet) {
+      flex-direction: column;
+
+      .content {
+        width: 90%;
+      }
+    }
+
+    @include respond($mobile) {
+      .content {
+        width: 100%;
+
+        .links {
+          @include flex(row, null, center);
+          gap: 0;
+        }
       }
     }
   }
