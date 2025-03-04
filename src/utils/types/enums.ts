@@ -50,7 +50,7 @@ export enum KeyboardEventCode {
 export enum EventType {
   Unhandledrejection = 'unhandledrejection',
   Click = 'click',
-  Keydown = 'Keydown',
+  Keydown = 'keydown',
 }
 
 export enum Language {
