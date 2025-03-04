@@ -1,7 +1,7 @@
 import { type FC, type KeyboardEvent, type MouseEvent, type ReactElement, useEffect, useRef } from 'react';
 import classes from './ErrorPopup.module.scss';
 import { Error } from '../Error/Error';
-import { KeyboardEventCode } from '../../../../utils/types/enums';
+import { EventType, KeyboardEventCode } from '../../../../utils/types/enums';
 
 type PropsType = {
   message: string | null;
@@ -15,14 +15,12 @@ export const ErrorPopup: FC<PropsType> = ({ message, setMessage }): ReactElement
     errorPopup.current?.focus();
   }, [message]);
 
-  const onPopupMouseClick = (event: MouseEvent<HTMLDivElement>): void => {
-    if ((event.target as HTMLDivElement).className === errorPopup.current?.className) {
-      setMessage(null);
-    }
-  };
-
-  const onKeyboardPress = (event: KeyboardEvent<HTMLDivElement>): void => {
-    if (event.code === KeyboardEventCode.Escape) {
+  const handleInteraction = (event: MouseEvent<HTMLDivElement> | KeyboardEvent<HTMLDivElement>): void => {
+    if (
+      (event.type === EventType.Click &&
+        (event.target as HTMLDivElement).className === errorPopup.current?.className) ||
+      (event.type === EventType.Keydown && (event as KeyboardEvent).code === KeyboardEventCode.Escape)
+    ) {
       setMessage(null);
     }
   };
@@ -33,8 +31,8 @@ export const ErrorPopup: FC<PropsType> = ({ message, setMessage }): ReactElement
       ref={errorPopup}
       role="button"
       tabIndex={0}
-      onClick={onPopupMouseClick}
-      onKeyDown={onKeyboardPress}
+      onClick={handleInteraction}
+      onKeyDown={handleInteraction}
     >
       <div className={classes.errorPopupContainer}>
         <Error title="Error" message={message} />

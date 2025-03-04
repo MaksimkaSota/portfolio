@@ -2,7 +2,7 @@ import type { Dispatch, FC, KeyboardEvent, MouseEvent, ReactElement, SetStateAct
 import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
 import classes from './Navigation.module.scss';
-import { KeyboardEventCode, RoutePath } from '../../../utils/types/enums';
+import { EventType, KeyboardEventCode, RoutePath } from '../../../utils/types/enums';
 
 type PropsType = {
   showBurgerMenu: boolean;
@@ -13,14 +13,11 @@ export const Navigation: FC<PropsType> = ({ showBurgerMenu, setShowBurgerMenu })
   const setClass = ({ isActive }: { isActive: boolean }): string =>
     cn(classes.link, { [classes.activeLink]: isActive });
 
-  const onLinkClick = (event: MouseEvent<HTMLDivElement>): void => {
-    if ((event.target as HTMLAnchorElement).className === classes.link) {
-      setShowBurgerMenu(false);
-    }
-  };
-
-  const onBurgerMenuPress = (event: KeyboardEvent<HTMLDivElement>): void => {
-    if (event.code === KeyboardEventCode.Enter) {
+  const handleInteraction = (event: MouseEvent<HTMLDivElement> | KeyboardEvent<HTMLDivElement>): void => {
+    if (
+      (event.type === EventType.Click && (event.target as HTMLAnchorElement).className === classes.link) ||
+      (event.type === EventType.Keydown && (event as KeyboardEvent).code === KeyboardEventCode.Enter)
+    ) {
       setShowBurgerMenu((prevActualState: boolean): boolean => !prevActualState);
     }
   };
@@ -31,8 +28,8 @@ export const Navigation: FC<PropsType> = ({ showBurgerMenu, setShowBurgerMenu })
         className={classes.navigationContainer}
         role="button"
         tabIndex={0}
-        onClick={onLinkClick}
-        onKeyDown={onBurgerMenuPress}
+        onClick={handleInteraction}
+        onKeyDown={handleInteraction}
       >
         <NavLink to={RoutePath.About} className={setClass}>
           About
