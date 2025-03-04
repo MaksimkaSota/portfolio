@@ -1,11 +1,13 @@
+@use 'sass:map';
+@use 'sass:meta';
 @use './variables' as *;
 
 @mixin respond($breakpoint) {
-  $query: map-get($breakpoints, $breakpoint);
+  $query: map.get($breakpoints, $breakpoint);
   @if not $query {
     @error 'No value found for `#{$breakpoint}`. Please make sure it is defined in `$breakpoints` map.';
   }
-  @media #{if(type-of($query) == 'string', unquote($query), inspect($query))} {
+  @media #{if(meta.type-of($query) == 'string', unquote($query), meta.inspect($query))} {
     @content;
   }
 }
