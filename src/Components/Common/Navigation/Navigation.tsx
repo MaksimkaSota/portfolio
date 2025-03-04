@@ -14,12 +14,12 @@ export const Navigation: FC<PropsType> = ({ showBurgerMenu, setShowBurgerMenu })
     cn(classes.link, { [classes.activeLink]: isActive });
 
   const onLinkClick = (event: MouseEvent<HTMLDivElement>): void => {
-    if ((event.target as HTMLElement).className === classes.link) {
+    if ((event.target as HTMLAnchorElement).className === classes.link) {
       setShowBurgerMenu(false);
     }
   };
 
-  const onBurgerMenuPress = (event: KeyboardEvent<HTMLElement>): void => {
+  const onBurgerMenuPress = (event: KeyboardEvent<HTMLDivElement>): void => {
     if (event.code === KeyboardEventCode.Enter) {
       setShowBurgerMenu((prevActualState: boolean): boolean => !prevActualState);
     }

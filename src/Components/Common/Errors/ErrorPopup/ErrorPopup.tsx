@@ -16,7 +16,7 @@ export const ErrorPopup: FC<PropsType> = ({ message, setMessage }): ReactElement
   }, [message]);
 
   const onPopupMouseClick = (event: MouseEvent<HTMLDivElement>): void => {
-    if ((event.target as Element).className === errorPopup.current?.className) {
+    if ((event.target as HTMLDivElement).className === errorPopup.current?.className) {
       setMessage(null);
     }
   };
