@@ -1,4 +1,16 @@
+@use 'sass:map';
+@use 'sass:meta';
 @use './variables' as *;
+
+@mixin respond($breakpoint) {
+  $query: map.get($breakpoints, $breakpoint);
+  @if not $query {
+    @error 'No value found for `#{$breakpoint}`. Please make sure it is defined in `$breakpoints` map.';
+  }
+  @media #{if(meta.type-of($query) == 'string', unquote($query), meta.inspect($query))} {
+    @content;
+  }
+}
 
 @mixin position($w, $m) {
   width: $w;
@@ -13,12 +25,16 @@
 }
 
 @mixin title($c: $main-content-text) {
-  margin: 0 0 $indent-min 0;
+  margin: 0 0 $indent-min;
   font:
     $size-42 Nunito,
     sans-serif;
   color: $c;
   text-align: center;
+
+  @include respond($tablet) {
+    font-size: $size-32;
+  }
 }
 
 @mixin link($size) {
@@ -45,6 +61,11 @@
 %wrapper-content {
   @include position(80%, 0 auto);
   padding: $indent-max 0;
+
+  @include respond($tablet) {
+    width: 90%;
+    padding: $indent-min 0;
+  }
 }
 
 %content {

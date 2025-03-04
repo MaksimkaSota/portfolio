@@ -47,6 +47,12 @@ export enum KeyboardEventCode {
   Escape = 'Escape',
 }
 
+export enum EventType {
+  Unhandledrejection = 'unhandledrejection',
+  Click = 'click',
+  Keydown = 'keydown',
+}
+
 export enum Language {
   Key = 'language',
   En = 'en',

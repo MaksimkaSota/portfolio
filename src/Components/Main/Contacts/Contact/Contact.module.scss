@@ -4,7 +4,7 @@
   @include flex(null, null, center);
 
   &:not(:last-child) {
-    margin: 0 0 $indent-max 0;
+    margin: 0 0 $indent-max;
   }
 
   .icon {

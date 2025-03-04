@@ -39,6 +39,18 @@
   .textarea {
     height: 105px;
     resize: none;
+
+    @include respond($laptop) {
+      height: 100px;
+    }
+
+    @include respond($tablet) {
+      height: 85px;
+    }
+
+    @include respond($mobile) {
+      height: 80px;
+    }
   }
 
   .validationError {

@@ -1,24 +1,57 @@
 @use '../../../utils/styles/global' as *;
 
 .navigation {
-  @include flex(null, null, center);
+  .navigationContainer {
+    @include flex(null, null, center);
 
-  .link {
-    @include link($size-16);
-    cursor: pointer;
-    text-transform: uppercase;
+    .link {
+      @include link($size-16);
+      cursor: pointer;
+      text-transform: uppercase;
 
-    &:not(:last-child) {
-      margin: 0 $indent-max 0 0;
+      &:not(:last-child) {
+        margin: 0 $indent-max 0 0;
+      }
+
+      &:hover {
+        color: $highlight-text;
+      }
     }
 
-    &:hover {
+    .activeLink {
+      cursor: default;
       color: $highlight-text;
     }
   }
 
-  .activeLink {
-    cursor: default;
-    color: $highlight-text;
+  @include respond($tablet) {
+    width: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+    transition: width 0.25s linear;
+    background: $shadow;
+    backdrop-filter: blur(5px);
+
+    .navigationContainer {
+      justify-content: space-evenly;
+      padding: $indent-min 0;
+
+      .link {
+        font-size: $size-20;
+
+        &:not(:last-child) {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.shownNavigation {
+  @include respond($tablet) {
+    width: 100%;
   }
 }

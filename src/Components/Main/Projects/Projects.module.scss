@@ -27,6 +27,18 @@
       .FP {
         grid-area: FP;
       }
+
+      @include respond($tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $button-indent;
+        grid-template-areas: 'SN EC' 'FP .';
+      }
+
+      @include respond($mobile) {
+        grid-template-columns: repeat(1, 1fr);
+        gap: $indent-min;
+        grid-template-areas: 'SN' 'EC' 'FP';
+      }
     }
   }
 }

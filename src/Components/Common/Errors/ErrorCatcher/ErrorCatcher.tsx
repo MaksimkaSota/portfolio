@@ -1,6 +1,7 @@
 import { Component, type ReactElement, type ReactNode } from 'react';
 import { Error } from '../Error/Error';
 import { ErrorPopup } from '../ErrorPopup/ErrorPopup';
+import { EventType } from '../../../../utils/types/enums';
 
 type PropsType = {
   children: ReactNode;
@@ -24,11 +25,11 @@ export class ErrorCatcher extends Component<PropsType, StateType> {
   }
 
   componentDidMount(): void {
-    window.addEventListener('unhandledrejection', this.catchUnhandledPromiseErrors);
+    window.addEventListener(EventType.Unhandledrejection, this.catchUnhandledPromiseErrors);
   }
 
   componentWillUnmount(): void {
-    window.removeEventListener('unhandledrejection', this.catchUnhandledPromiseErrors);
+    window.removeEventListener(EventType.Unhandledrejection, this.catchUnhandledPromiseErrors);
   }
 
   catchUnhandledPromiseErrors = (): void => {

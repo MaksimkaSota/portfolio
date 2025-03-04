@@ -5,6 +5,7 @@
   height: 100%;
   @include flex(null, center, center);
   background: $shadow;
+  backdrop-filter: blur(5px);
   position: fixed;
   top: 0;
   z-index: 3;
@@ -17,5 +18,17 @@
     @include flex(column, null, null);
     @include corners(50px, 50px);
     @extend %left-bottom-right-top-corners;
+
+    @include respond($laptop) {
+      width: 65%;
+    }
+
+    @include respond($tablet) {
+      width: 75%;
+    }
+
+    @include respond($mobile) {
+      width: 85%;
+    }
   }
 }
