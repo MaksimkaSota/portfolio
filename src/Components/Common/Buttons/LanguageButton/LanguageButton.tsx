@@ -11,6 +11,7 @@ export const LanguageButton: FC = (): ReactElement => {
   const onLanguageMode = (): void => {
     const newLanguageMode = languageMode === Language.En ? Language.Ru : Language.En;
     setLanguageMode(newLanguageMode);
+
     localStorage.setItem(Language.Key, newLanguageMode);
   };
 

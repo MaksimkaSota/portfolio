@@ -69,5 +69,17 @@
     position: absolute;
     left: 10px;
     bottom: 3px;
+
+    @include respond($laptop) {
+      bottom: 4px;
+    }
+
+    @include respond($tablet) {
+      bottom: 5px;
+    }
+
+    @include respond($mobile) {
+      bottom: 6px;
+    }
   }
 }

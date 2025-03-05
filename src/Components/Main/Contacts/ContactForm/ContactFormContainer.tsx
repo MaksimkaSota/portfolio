@@ -48,6 +48,7 @@ export const ContactFormContainer: FC = (): ReactElement => {
         handleChange,
         setStatus,
         submitForm,
+        resetForm,
       }): ReactElement => (
         <ContactForm
           values={values}
@@ -60,6 +61,7 @@ export const ContactFormContainer: FC = (): ReactElement => {
           handleChange={handleChange}
           setStatus={setStatus}
           submitForm={submitForm}
+          resetForm={resetForm}
         />
       )}
     </Formik>

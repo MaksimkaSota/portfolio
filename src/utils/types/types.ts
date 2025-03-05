@@ -1,5 +1,5 @@
 import type { ChangeEvent, KeyboardEvent } from 'react';
-import type { FormikErrors } from 'formik';
+import type { FormikErrors, FormikState } from 'formik';
 import type { EmailStatus } from './enums';
 
 export type FormDataType = {
@@ -31,6 +31,8 @@ export type SetSubmittingType = (isSubmitting: boolean) => void;
 export type SetStatusType = (status?: any) => void;
 
 export type SubmitFormType = () => Promise<any>;
+
+export type ResetFormType = (nextState?: Partial<FormikState<any>>) => void;
 
 export type FieldChangeType = (event: ChangeEvent<any>) => void;
 

@@ -53,6 +53,7 @@
     "button": {
       "language": "ENG",
       "download": "Download CV",
+      "reset": "Reset form",
       "send": "Send message"
     },
 

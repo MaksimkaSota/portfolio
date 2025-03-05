@@ -104,6 +104,7 @@ export enum ContentTxtKey {
 
   LanguageButton = 'content.button.language',
   DownloadButton = 'content.button.download',
+  ResetButton = 'content.button.reset',
   SendButton = 'content.button.send',
 
   BNTUText = 'content.text.BNTU',

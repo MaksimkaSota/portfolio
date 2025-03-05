@@ -11,6 +11,7 @@ import type {
   FormDataType,
   FormikErrorsType,
   FormikTouchedType,
+  ResetFormType,
   SetStatusType,
   SubmitFormType,
 } from '../../../../utils/types/types';
@@ -26,6 +27,7 @@ type PropsType = {
   handleChange: FieldChangeType;
   setStatus: SetStatusType;
   submitForm: SubmitFormType;
+  resetForm: ResetFormType;
 };
 
 export const ContactForm: FC<PropsType> = ({
@@ -39,12 +41,14 @@ export const ContactForm: FC<PropsType> = ({
   handleChange,
   setStatus,
   submitForm,
+  resetForm,
 }): ReactElement => {
   const isFormValid = !isValid && Object.keys(errors).some((key) => touched[key]);
 
   const onFieldChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, name: string): void => {
     handleChange(event);
     setStatus('');
+
     localStorage.setItem(name, event.target.value);
   };
 
@@ -52,6 +56,26 @@ export const ContactForm: FC<PropsType> = ({
     if (event.code === KeyboardEventCode.Enter && !event.shiftKey) {
       submitForm();
     }
+  };
+
+  const onResetButtonClick = (): void => {
+    resetForm({
+      status: '',
+      values: {
+        [FieldName.Name]: '',
+        [FieldName.Email]: '',
+        [FieldName.Message]: '',
+      },
+      touched: {
+        [FieldName.Name]: false,
+        [FieldName.Email]: false,
+        [FieldName.Message]: false,
+      },
+    });
+
+    localStorage.removeItem(FieldName.Name);
+    localStorage.removeItem(FieldName.Email);
+    localStorage.removeItem(FieldName.Message);
   };
 
   return (
@@ -92,25 +116,30 @@ export const ContactForm: FC<PropsType> = ({
           onKeyDown={onFieldKeyDown}
         />
         <Button
+          text="Reset form"
+          type={ElementName.TypeReset}
+          className={classes.resetButton}
+          onClick={onResetButtonClick}
+          disabled={isSubmitting}
+        />
+        <Button
           text="Send message"
           type={ElementName.TypeSubmit}
           className={classes.sendButton}
           disabled={isFormValid || isSubmitting}
         />
-        <div className={classes.statusContainer}>
-          {status && (
-            <p
-              className={cn(classes.status, {
-                [classes.statusSending]: emailStatus === EmailStatus.Sending,
-                [classes.successStatus]: emailStatus === EmailStatus.Success,
-                [classes.failureStatus]: emailStatus === EmailStatus.Failure,
-              })}
-            >
-              {status}
-            </p>
-          )}
-        </div>
       </div>
+      {status && (
+        <p
+          className={cn(classes.status, {
+            [classes.statusSending]: emailStatus === EmailStatus.Sending,
+            [classes.successStatus]: emailStatus === EmailStatus.Success,
+            [classes.failureStatus]: emailStatus === EmailStatus.Failure,
+          })}
+        >
+          {status}
+        </p>
+      )}
     </Form>
   );
 };
