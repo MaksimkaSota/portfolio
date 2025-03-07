@@ -1,6 +1,7 @@
 import { isAxiosError } from 'axios';
 import { api } from './api';
-import { EmailStatus, FieldName } from '../../utils/types/enums';
+import i18next from '../localization/i18n';
+import { EmailStatus, ErrorTxtKey, FieldName, FormHintTxtKey } from '../../utils/types/enums';
 import type {
   EmailStatusType,
   FormDataType,
@@ -19,10 +20,10 @@ export const sendEmail = async (
   setEmailStatus: (emailStatus: EmailStatusType) => void
 ): Promise<void> => {
   try {
-    setStatus('Email is being sent...');
+    setStatus(i18next.t(FormHintTxtKey.Sending));
     setEmailStatus(EmailStatus.Sending);
     await api.post('', formData);
-    setStatus('Successful sending.');
+    setStatus(i18next.t(FormHintTxtKey.SendingSuccess));
     setEmailStatus(EmailStatus.Success);
     setFieldValue(FieldName.Message, '');
     setFieldTouched(FieldName.Message, false);
@@ -30,9 +31,10 @@ export const sendEmail = async (
     localStorage.removeItem(FieldName.Message);
   } catch (error: unknown) {
     if (isAxiosError(error)) {
-      setStatus(`Sending error. ${error.response?.data.error || error.message}`);
+      setStatus(i18next.t(ErrorTxtKey.Sending, { error: error.response?.data.error || error.message }));
       setEmailStatus(EmailStatus.Failure);
     }
   }
+
   setSubmitting(false);
 };

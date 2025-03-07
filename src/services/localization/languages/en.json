@@ -70,10 +70,10 @@
       "studySubname": "The study project",
       "petSubname": "The pet project",
       "technology": "Technologies",
-      "phone": "Phone",
-      "mail": "E-mail",
-      "address": "Address",
-      "links": "Links",
+      "phone": "Phone:",
+      "mail": "E-mail:",
+      "address": "Address:",
+      "links": "Links:",
       "location": "Republic of Belarus, Minsk"
     }
   },

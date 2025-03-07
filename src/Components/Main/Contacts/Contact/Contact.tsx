@@ -7,10 +7,11 @@ type PropsType = {
   name: string;
   text?: string;
   link?: string;
+  phone?: string;
   children?: ReactNode;
 };
 
-export const Contact: FC<PropsType> = ({ icon, name, text, link, children }): ReactElement => {
+export const Contact: FC<PropsType> = ({ icon, name, text, link, phone, children }): ReactElement => {
   return (
     <div className={classes.contact}>
       <p className={cn(classes.icon, icon)} />
@@ -19,6 +20,11 @@ export const Contact: FC<PropsType> = ({ icon, name, text, link, children }): Re
       {link && (
         <a className={classes.link} href={`mailto:${link}`}>
           {link}
+        </a>
+      )}
+      {phone && (
+        <a className={classes.phone} href={`tel:${phone}`}>
+          {phone}
         </a>
       )}
       {children}

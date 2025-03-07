@@ -23,11 +23,13 @@
   }
 
   .text,
-  .link {
+  .link,
+  .phone {
     font-size: $size-14;
   }
 
-  .link:hover {
+  .link:hover,
+  .phone:hover {
     transition: all 0.25s linear;
     color: $highlight-text;
   }

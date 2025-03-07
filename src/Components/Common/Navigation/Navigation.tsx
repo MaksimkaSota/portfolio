@@ -1,8 +1,9 @@
 import type { Dispatch, FC, KeyboardEvent, MouseEvent, ReactElement, SetStateAction } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 import classes from './Navigation.module.scss';
-import { EventType, KeyboardEventCode, RoutePath } from '../../../utils/types/enums';
+import { ContentTxtKey, EventType, KeyboardEventCode, RoutePath } from '../../../utils/types/enums';
 
 type PropsType = {
   showBurgerMenu: boolean;
@@ -10,6 +11,8 @@ type PropsType = {
 };
 
 export const Navigation: FC<PropsType> = ({ showBurgerMenu, setShowBurgerMenu }): ReactElement => {
+  const { t } = useTranslation();
+
   const setClass = ({ isActive }: { isActive: boolean }): string =>
     cn(classes.link, { [classes.activeLink]: isActive });
 
@@ -32,16 +35,16 @@ export const Navigation: FC<PropsType> = ({ showBurgerMenu, setShowBurgerMenu })
         onKeyDown={handleInteraction}
       >
         <NavLink to={RoutePath.About} className={setClass}>
-          About
+          {t(ContentTxtKey.AboutLink)}
         </NavLink>
         <NavLink to={RoutePath.Skills} className={setClass}>
-          Skills
+          {t(ContentTxtKey.SkillsLink)}
         </NavLink>
         <NavLink to={RoutePath.Projects} className={setClass}>
-          Projects
+          {t(ContentTxtKey.ProjectsLink)}
         </NavLink>
         <NavLink to={RoutePath.Contacts} className={setClass}>
-          Contacts
+          {t(ContentTxtKey.ContactsLink)}
         </NavLink>
       </div>
     </nav>

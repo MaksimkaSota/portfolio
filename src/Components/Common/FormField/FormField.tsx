@@ -1,8 +1,9 @@
 import type { FC, ReactElement } from 'react';
 import { ErrorMessage, Field } from 'formik';
+import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 import classes from './FormField.module.scss';
-import { ElementName } from '../../../utils/types/enums';
+import { ElementName, FormHintTxtKey } from '../../../utils/types/enums';
 import type {
   FieldChangeType,
   FieldKeyDownType,
@@ -32,6 +33,8 @@ export const FormField: FC<PropsType> = ({
   errors,
   ...props
 }): ReactElement => {
+  const { t } = useTranslation();
+
   return (
     <div className={cn(classes.formField)}>
       <Field
@@ -41,7 +44,7 @@ export const FormField: FC<PropsType> = ({
         })}
         name={name}
         component={component}
-        title={values[name] ? undefined : 'Fill in this field'}
+        title={values[name] ? undefined : t(FormHintTxtKey.Filling)}
         {...props}
       />
       <ErrorMessage className={classes.fieldError} name={name} component={ElementName.P} />

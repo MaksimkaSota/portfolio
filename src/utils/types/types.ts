@@ -34,6 +34,8 @@ export type SubmitFormType = () => Promise<any>;
 
 export type ResetFormType = (nextState?: Partial<FormikState<any>>) => void;
 
+export type ValidateFormType = (values?: any) => Promise<FormikErrors<any>>;
+
 export type FieldChangeType = (event: ChangeEvent<any>) => void;
 
 export type FieldKeyDownType = (event: KeyboardEvent<any>) => void;

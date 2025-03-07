@@ -1,10 +1,18 @@
-import type { ChangeEvent, FC, KeyboardEvent, ReactElement } from 'react';
+import { type ChangeEvent, type FC, type KeyboardEvent, type ReactElement, useEffect } from 'react';
 import { Form } from 'formik';
+import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 import classes from './ContactForm.module.scss';
 import { FormField } from '../../../Common/FormField/FormField';
 import { Button } from '../../../Common/Buttons/Button/Button';
-import { ElementName, EmailStatus, FieldName, KeyboardEventCode } from '../../../../utils/types/enums';
+import {
+  ContentTxtKey,
+  ElementName,
+  EmailStatus,
+  FieldName,
+  FormHintTxtKey,
+  KeyboardEventCode,
+} from '../../../../utils/types/enums';
 import type {
   EmailStatusType,
   FieldChangeType,
@@ -14,12 +22,12 @@ import type {
   ResetFormType,
   SetStatusType,
   SubmitFormType,
+  ValidateFormType,
 } from '../../../../utils/types/types';
 
 type PropsType = {
   values: FormDataType;
   status: string;
-  initialStatus: string;
   emailStatus: EmailStatusType;
   setEmailStatus: (emailStatus: EmailStatusType) => void;
   touched: FormikTouchedType;
@@ -30,12 +38,12 @@ type PropsType = {
   setStatus: SetStatusType;
   submitForm: SubmitFormType;
   resetForm: ResetFormType;
+  validateForm: ValidateFormType;
 };
 
 export const ContactForm: FC<PropsType> = ({
   values,
   status,
-  initialStatus,
   emailStatus,
   setEmailStatus,
   touched,
@@ -46,12 +54,21 @@ export const ContactForm: FC<PropsType> = ({
   setStatus,
   submitForm,
   resetForm,
+  validateForm,
 }): ReactElement => {
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    setStatus(t(FormHintTxtKey.InitialStatus));
+    setEmailStatus(EmailStatus.Initial);
+    validateForm();
+  }, [t, setStatus, setEmailStatus, validateForm]);
+
   const isFormValid = !isValid && Object.keys(errors).some((key) => touched[key]);
 
   const onFieldChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, name: string): void => {
     handleChange(event);
-    setStatus(initialStatus);
+    setStatus(t(FormHintTxtKey.InitialStatus));
     setEmailStatus(EmailStatus.Initial);
 
     localStorage.setItem(name, event.target.value);
@@ -65,7 +82,7 @@ export const ContactForm: FC<PropsType> = ({
 
   const onResetButtonClick = (): void => {
     resetForm({
-      status: initialStatus,
+      status: t(FormHintTxtKey.InitialStatus),
       values: {
         [FieldName.Name]: '',
         [FieldName.Email]: '',
@@ -84,12 +101,12 @@ export const ContactForm: FC<PropsType> = ({
 
   return (
     <Form className={classes.contactForm}>
-      <h5 className={classes.formTitle}>Contact with me</h5>
+      <h5 className={classes.formTitle}>{t(FormHintTxtKey.Contact)}</h5>
       <div className={classes.wrapper}>
         <FormField
           name={FieldName.Name}
           type={ElementName.TypeText}
-          placeholder="Name"
+          placeholder={t(FormHintTxtKey.Name)}
           disabled={isSubmitting}
           values={values}
           touched={touched}
@@ -100,7 +117,7 @@ export const ContactForm: FC<PropsType> = ({
         <FormField
           name={FieldName.Email}
           type={ElementName.TypeText}
-          placeholder="Email"
+          placeholder={t(FormHintTxtKey.Mail)}
           disabled={isSubmitting}
           values={values}
           touched={touched}
@@ -111,7 +128,7 @@ export const ContactForm: FC<PropsType> = ({
         <FormField
           name={FieldName.Message}
           component={ElementName.Textarea}
-          placeholder={`Message\n\n\n\nShift+Enter for new line`}
+          placeholder={t(FormHintTxtKey.Message)}
           disabled={isSubmitting}
           values={values}
           touched={touched}
@@ -120,14 +137,14 @@ export const ContactForm: FC<PropsType> = ({
           onKeyDown={onFieldKeyDown}
         />
         <Button
-          text="Reset form"
+          text={t(ContentTxtKey.ResetButton)}
           type={ElementName.TypeReset}
           className={classes.resetButton}
           onClick={onResetButtonClick}
           disabled={isSubmitting}
         />
         <Button
-          text="Send message"
+          text={t(ContentTxtKey.SendButton)}
           type={ElementName.TypeSubmit}
           className={classes.sendButton}
           disabled={isFormValid || isSubmitting}

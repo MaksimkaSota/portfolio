@@ -5,8 +5,8 @@ import { Button } from '../Button/Button';
 import { ContentTxtKey, Language } from '../../../../utils/types/enums';
 
 export const LanguageButton: FC = (): ReactElement => {
-  const [languageMode, setLanguageMode] = useState<string>(localStorage.getItem(Language.Key) || Language.En);
   const { i18n, t } = useTranslation();
+  const [languageMode, setLanguageMode] = useState<string>(localStorage.getItem(Language.Key) || Language.En);
 
   const onLanguageMode = (): void => {
     const newLanguageMode = languageMode === Language.En ? Language.Ru : Language.En;
