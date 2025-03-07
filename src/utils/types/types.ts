@@ -38,4 +38,4 @@ export type FieldChangeType = (event: ChangeEvent<any>) => void;
 
 export type FieldKeyDownType = (event: KeyboardEvent<any>) => void;
 
-export type EmailStatusType = EmailStatus.Sending | EmailStatus.Success | EmailStatus.Failure;
+export type EmailStatusType = EmailStatus.Initial | EmailStatus.Sending | EmailStatus.Success | EmailStatus.Failure;

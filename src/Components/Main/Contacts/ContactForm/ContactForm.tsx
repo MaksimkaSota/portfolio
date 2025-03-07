@@ -19,7 +19,9 @@ import type {
 type PropsType = {
   values: FormDataType;
   status: string;
+  initialStatus: string;
   emailStatus: EmailStatusType;
+  setEmailStatus: (emailStatus: EmailStatusType) => void;
   touched: FormikTouchedType;
   errors: FormikErrorsType;
   isValid: boolean;
@@ -33,7 +35,9 @@ type PropsType = {
 export const ContactForm: FC<PropsType> = ({
   values,
   status,
+  initialStatus,
   emailStatus,
+  setEmailStatus,
   touched,
   errors,
   isValid,
@@ -47,7 +51,8 @@ export const ContactForm: FC<PropsType> = ({
 
   const onFieldChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, name: string): void => {
     handleChange(event);
-    setStatus('');
+    setStatus(initialStatus);
+    setEmailStatus(EmailStatus.Initial);
 
     localStorage.setItem(name, event.target.value);
   };
@@ -60,18 +65,17 @@ export const ContactForm: FC<PropsType> = ({
 
   const onResetButtonClick = (): void => {
     resetForm({
-      status: '',
+      status: initialStatus,
       values: {
         [FieldName.Name]: '',
         [FieldName.Email]: '',
         [FieldName.Message]: '',
       },
-      touched: {
-        [FieldName.Name]: false,
-        [FieldName.Email]: false,
-        [FieldName.Message]: false,
-      },
+      touched: {},
+      errors: {},
     });
+
+    setEmailStatus(EmailStatus.Initial);
 
     localStorage.removeItem(FieldName.Name);
     localStorage.removeItem(FieldName.Email);
@@ -132,6 +136,7 @@ export const ContactForm: FC<PropsType> = ({
       {status && (
         <p
           className={cn(classes.status, {
+            [classes.initialStatus]: emailStatus === EmailStatus.Initial,
             [classes.statusSending]: emailStatus === EmailStatus.Sending,
             [classes.successStatus]: emailStatus === EmailStatus.Success,
             [classes.failureStatus]: emailStatus === EmailStatus.Failure,

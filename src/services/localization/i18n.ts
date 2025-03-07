@@ -10,10 +10,19 @@ i18n
   .use(initReactI18next)
   .init({
     debug: false,
+
     fallbackLng: 'en',
+
+    detection: {
+      order: ['localStorage', 'htmlTag', 'navigator'],
+    },
+
+    supportedLngs: ['en', 'ru'],
+
     interpolation: {
       escapeValue: false,
     },
+
     resources: {
       en: {
         translation: enLang,

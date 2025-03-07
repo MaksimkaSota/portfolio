@@ -37,6 +37,7 @@ export enum ElementName {
 }
 
 export enum EmailStatus {
+  Initial = 'initial',
   Sending = 'sending',
   Success = 'success',
   Failure = 'failure',
@@ -119,7 +120,6 @@ export enum ContentTxtKey {
   StudySubnameText = 'content.text.studySubname',
   PetSubnameText = 'content.text.petSubname',
   TechnologyText = 'content.text.technology',
-  ContactText = 'content.text.contact',
   PhoneText = 'content.text.phone',
   MailText = 'content.text.mail',
   AddressText = 'content.text.address',
@@ -127,13 +127,15 @@ export enum ContentTxtKey {
   LocationText = 'content.text.location',
 }
 
-export enum HintTxtKey {
-  Filling = 'hint.filling',
-  Name = 'hint.name',
-  Mail = 'hint.mail',
-  Message = 'hint.message',
-  Sending = 'hint.sending',
-  SendingSuccess = 'hint.sendingSuccess',
+export enum FormHintTxtKey {
+  Contact = 'formHint.contact',
+  Filling = 'formHint.filling',
+  Name = 'formHint.name',
+  Mail = 'formHint.mail',
+  Message = 'formHint.message',
+  InitialStatus = 'formHint.initialStatus',
+  Sending = 'formHint.sending',
+  SendingSuccess = 'formHint.sendingSuccess',
 }
 
 export enum AltTxtKey {

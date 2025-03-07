@@ -42,7 +42,6 @@
       "studySubname": "Учебный проект",
       "petSubname": "Личный проект",
       "technology": "Технологии",
-      "contact": "Связаться со мной",
       "phone": "Телефон",
       "mail": "Почта",
       "address": "Адрес",
@@ -51,11 +50,13 @@
     }
   },
 
-  "hint": {
+  "formHint": {
+    "contact": "Связаться со мной",
     "filling": "Заполните это поле",
     "name": "Имя",
     "mail": "Почта",
     "message": "Сообщение\n\n\n\nShift+Enter для новой строки",
+    "initialStatus": "Форма отправки сообщения",
     "sending": "Письмо отправляется...",
     "successfulSending": "Отправка успешна."
   },

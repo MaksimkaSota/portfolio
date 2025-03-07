@@ -35,12 +35,14 @@ export const ContactFormContainer: FC = (): ReactElement => {
         email: localStorage.getItem(FieldName.Email) || '',
         message: localStorage.getItem(FieldName.Message) || '',
       }}
+      initialStatus="Message submission form"
       validationSchema={validationSchema}
       onSubmit={onSubmit}
     >
       {({
         values,
         status,
+        initialStatus,
         touched,
         errors,
         isValid,
@@ -53,7 +55,9 @@ export const ContactFormContainer: FC = (): ReactElement => {
         <ContactForm
           values={values}
           status={status}
+          initialStatus={initialStatus}
           emailStatus={emailStatus}
+          setEmailStatus={setEmailStatus}
           touched={touched}
           errors={errors}
           isValid={isValid}

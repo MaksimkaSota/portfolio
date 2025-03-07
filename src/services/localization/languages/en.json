@@ -70,7 +70,6 @@
       "studySubname": "The study project",
       "petSubname": "The pet project",
       "technology": "Technologies",
-      "contact": "Contact with me",
       "phone": "Phone",
       "mail": "E-mail",
       "address": "Address",
@@ -79,11 +78,13 @@
     }
   },
 
-  "hint": {
+  "formHint": {
+    "contact": "Contact with me",
     "filling": "Fill in this field",
     "name": "Name",
     "mail": "E-mail",
     "message": "Message\n\n\n\nShift+Enter for new line",
+    "initialStatus": "Message submission form",
     "sending": "Email is being sent...",
     "sendingSuccess": "Successful sending."
   },
