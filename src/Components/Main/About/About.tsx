@@ -17,9 +17,7 @@ export const About: FC = (): ReactElement => {
           <h1 className={classes.mainTitle}>{t(ContentTxtKey.MainTitle)}</h1>
           <p className={classes.text}>
             <Trans i18nKey={ContentTxtKey.AboutDescription1}>
-              I am a <span className={classes.highlightText}>Frontend developer</span> focused on creating interactive
-              and user-friendly web applications. My toolkit includes React, Redux, JavaScript, TypeScript, as well as
-              many other tools to build scalable and maintainable user interfaces.
+              <span className={classes.highlightText} />
             </Trans>
           </p>
           <p className={classes.text}>{t(ContentTxtKey.AboutDescription2)}</p>

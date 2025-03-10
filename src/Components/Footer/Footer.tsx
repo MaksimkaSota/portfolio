@@ -22,7 +22,7 @@ export const Footer: FC = (): ReactElement => {
         </div>
         <p className={classes.copyright}>
           <Trans i18nKey={ContentTxtKey.FooterDescription}>
-            © Developed by <span className={classes.highlightText}>Maksim Sotnikov</span>
+            <span className={classes.highlightText} />
           </Trans>
         </p>
       </div>
