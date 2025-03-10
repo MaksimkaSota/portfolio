@@ -1,24 +1,29 @@
 import { type FC, type ReactElement, useState } from 'react';
 import { Formik, type FormikHelpers } from 'formik';
 import * as Yup from 'yup';
+import { useTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
 import { ContactForm } from './ContactForm';
 import { sendEmail } from '../../../../services/api/email';
 import type { EmailStatusType, FormDataType } from '../../../../utils/types/types';
-import { EmailStatus, FieldName } from '../../../../utils/types/enums';
+import { EmailStatus, FieldName, FormHintTxtKey, ValidationTxtKey } from '../../../../utils/types/enums';
 
-const validationSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(3, 'Must be not less than 3 symbols')
-    .max(50, 'Must be not more than 50 symbols')
-    .required('Required name'),
-  email: Yup.string()
-    .max(50, 'Must be not more than 50 symbols')
-    .email('Invalid email address')
-    .required('Required email address'),
-  message: Yup.string().required('Required message'),
-});
+const validationSchema = (t: TFunction): Object => {
+  return Yup.object().shape({
+    name: Yup.string()
+      .min(3, t(ValidationTxtKey.Min, { number: 3 }))
+      .max(50, t(ValidationTxtKey.Max, { number: 50 }))
+      .required(t(ValidationTxtKey.Required)),
+    email: Yup.string()
+      .max(50, t(ValidationTxtKey.Max, { number: 50 }))
+      .email(t(ValidationTxtKey.Mail))
+      .required(t(ValidationTxtKey.Required)),
+    message: Yup.string().required(t(ValidationTxtKey.Required)),
+  });
+};
 
 export const ContactFormContainer: FC = (): ReactElement => {
+  const { t } = useTranslation();
   const [emailStatus, setEmailStatus] = useState<EmailStatusType>(EmailStatus.Sending);
 
   const onSubmit = (
@@ -35,7 +40,8 @@ export const ContactFormContainer: FC = (): ReactElement => {
         email: localStorage.getItem(FieldName.Email) || '',
         message: localStorage.getItem(FieldName.Message) || '',
       }}
-      validationSchema={validationSchema}
+      initialStatus={t(FormHintTxtKey.InitialStatus)}
+      validationSchema={validationSchema(t)}
       onSubmit={onSubmit}
     >
       {({
@@ -48,11 +54,14 @@ export const ContactFormContainer: FC = (): ReactElement => {
         handleChange,
         setStatus,
         submitForm,
+        resetForm,
+        validateForm,
       }): ReactElement => (
         <ContactForm
           values={values}
           status={status}
           emailStatus={emailStatus}
+          setEmailStatus={setEmailStatus}
           touched={touched}
           errors={errors}
           isValid={isValid}
@@ -60,6 +69,8 @@ export const ContactFormContainer: FC = (): ReactElement => {
           handleChange={handleChange}
           setStatus={setStatus}
           submitForm={submitForm}
+          resetForm={resetForm}
+          validateForm={validateForm}
         />
       )}
     </Formik>

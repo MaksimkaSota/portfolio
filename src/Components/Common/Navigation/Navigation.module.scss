@@ -8,6 +8,7 @@
       @include link($size-16);
       cursor: pointer;
       text-transform: uppercase;
+      white-space: nowrap;
 
       &:not(:last-child) {
         margin: 0 $indent-max 0 0;

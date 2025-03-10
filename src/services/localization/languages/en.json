@@ -1,0 +1,119 @@
+{
+  "content": {
+    "title": {
+      "main": "I am Maksim Sotnikov",
+      "about": "About me",
+      "skills": "My skills",
+      "projects": "My projects",
+      "contacts": "My contacts",
+      "notFound": "Page not found"
+    },
+
+    "description": {
+      "about1": "I am a <0>Frontend developer</0> focused on creating interactive and user-friendly web applications. My toolkit includes React, Redux, JavaScript, TypeScript, as well as many other tools to build scalable and maintainable user interfaces.",
+      "about2": "My goal is to create intuitive and engaging web applications. I am committed to staying up to date with the latest technologies and trends in web development to ensure that my work remains relevant and effective. I believe that web development is not just about coding, but also about understanding the needs of users and creating solutions that meet their requirements.",
+      "SocialNetwork": "is a website for creating accounts and interacting with others. It provides essential social networking features such as profile management, searching for friends and following them, and communicating via chat.",
+      "EasyCharts": "is a website for creating charts online. Select the chart type, fill in the data tables, and the chart is done! You can view and save the chart to paste into Excel, Word, and other programs on your computer. You can also get a link to the chart page to share it.",
+      "FutureProject": "is a unique opportunity that will allow me to showcase my creativity and ability to work with modern technologies. It will also serve as a great way to learn new development tools and methods, as well as gain experience working on a real project.",
+      "footer": "© Developed by <0>Maksim Sotnikov</0>"
+    },
+
+    "skill": {
+      "HTML": "HTML",
+      "CSS": "CSS",
+      "Less": "Less",
+      "Sass": "Sass",
+      "JS": "JavaScript",
+      "TS": "TypeScript",
+      "React": "React",
+      "Redux": "Redux",
+      "Jest": "Jest",
+      "Webpack": "Webpack",
+      "ESLint": "ESLint",
+      "Prettier": "Prettier",
+      "Git": "Git",
+      "GH": "GitHub",
+      "WS": "WebStorm",
+      "Figma": "Figma"
+    },
+
+    "project": {
+      "SocialNetwork": "Social Network",
+      "EasyCharts": "Easy Charts",
+      "FutureProject": "Future Project"
+    },
+
+    "link": {
+      "about": "About",
+      "skills": "Skills",
+      "projects": "Projects",
+      "contacts": "Contacts",
+      "code": "View Code",
+      "preview": "Live Preview",
+      "GitHub": "GitHub",
+      "LinkedIn": "LinkedIn",
+      "Facebook": "Facebook",
+      "Instagram": "Instagram",
+      "Telegram": "Telegram"
+    },
+
+    "button": {
+      "language": "ENG",
+      "download": "Download CV",
+      "reset": "Reset form",
+      "send": "Send message"
+    },
+
+    "text": {
+      "BNTU": "Belarusian National Technical University",
+      "speciality1": "Mechanical Engineering",
+      "STEP": "Computer Academy STEP",
+      "speciality2": "Front-end Development",
+      "RSS": "The Rolling Scopes School",
+      "speciality3": "JavaScript/Front-end",
+      "studySubname": "The study project",
+      "petSubname": "The pet project",
+      "technology": "<0>Technologies:</0> {{technologies}}",
+      "technologySN": "React, Redux, TypeScript, SCSS, Axios, REST API, WebSocket, Formik, ESLint, Jest.",
+      "technologyEC": "React, Redux, TypeScript, SCSS, Axios, REST API, Formik, i18next, ESLint.",
+      "technologyFP": "React, Redux, TypeScript.",
+      "phone": "Phone:",
+      "mail": "E-mail:",
+      "address": "Address:",
+      "links": "Links:",
+      "location": "Republic of Belarus, Minsk"
+    }
+  },
+
+  "formHint": {
+    "contact": "Contact with me",
+    "filling": "Fill in this field",
+    "name": "Name",
+    "mail": "E-mail",
+    "message": "Message\n\n\n\nShift+Enter for new line",
+    "initialStatus": "Message submission form",
+    "sending": "Email is being sent...",
+    "sendingSuccess": "Successful sending."
+  },
+
+  "alt": {
+    "error": "Error",
+    "photo": "Portrait",
+    "logo": "Logo"
+  },
+
+  "validation": {
+    "mail": "Invalid email address",
+    "required": "Required to enter",
+    "min": "Must be not less than {{number}} symbols",
+    "max": "Must be not more than {{number}} symbols"
+  },
+
+  "error": {
+    "error": "Error",
+    "unhandledPromise": "Some Connection error! We are sorry... We will fix it soon!",
+    "unhandledUI": "Some UI error! We are sorry... We will fix it soon!",
+    "notFound": "The requested URL \"{{pathname}}\" was not found on this server!",
+    "sending": "Sending error. {{error}}"
+  }
+}
