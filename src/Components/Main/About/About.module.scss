@@ -9,37 +9,6 @@
 
     .portraitContainer {
       width: 25%;
-      position: relative;
-
-      .portrait {
-        width: 100%;
-        box-shadow: 0 0 10px 5px $shadow;
-      }
-
-      .portraitMin {
-        opacity: 1;
-        filter: blur(5px);
-        transition: opacity 0.5s linear;
-      }
-
-      .hiddenPortraitMin {
-        opacity: 0;
-      }
-
-      .portraitMax {
-        position: absolute;
-        top: 0;
-        opacity: 0;
-        filter: blur(15px);
-        transition:
-          opacity,
-          filter 0.5s linear;
-      }
-
-      .shownPortraitMax {
-        opacity: 1;
-        filter: blur(0);
-      }
     }
 
     .content {
@@ -90,7 +59,7 @@
     }
 
     @include respond($laptop) {
-      .portrait {
+      .portraitContainer {
         width: 30%;
       }
 
@@ -107,7 +76,7 @@
       flex-direction: column;
       position: relative;
 
-      .portrait {
+      .portraitContainer {
         @include position(50%, 75.6px 0 $indent-min);
       }
 
@@ -142,7 +111,7 @@
     }
 
     @include respond($mobile) {
-      .portrait {
+      .portraitContainer {
         @include position(70%, 64.4px 0 $indent-min);
       }
 

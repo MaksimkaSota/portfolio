@@ -1,0 +1,35 @@
+@use '../../../utils/styles/variables' as *;
+
+.container {
+  position: relative;
+
+  .image {
+    width: 100%;
+    box-shadow: 0 0 10px 5px $shadow;
+  }
+
+  .imageMin {
+    opacity: 1;
+    filter: blur(5px);
+    transition: opacity 0.5s ease-out;
+  }
+
+  .hiddenImageMin {
+    opacity: 0;
+  }
+
+  .imageMax {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    filter: blur(15px);
+    transition:
+      opacity,
+      filter 0.5s ease-out;
+  }
+
+  .shownImageMax {
+    opacity: 1;
+    filter: blur(0);
+  }
+}

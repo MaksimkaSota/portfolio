@@ -1,27 +1,11 @@
-import { type FC, type ReactElement, useState } from 'react';
+import { type FC, type ReactElement } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import cn from 'classnames';
 import classes from './About.module.scss';
+import { Image } from '../../Common/Image/Image';
 import PortraitMin from '../../../assets/images/portrait.svg';
 import portraitMax from '../../../assets/images/portrait.jpg';
 import resume from '../../../assets/documents/resume.pdf';
 import { AltTxtKey, ContentTxtKey } from '../../../utils/types/enums';
-
-const Image: FC = (): ReactElement => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  return (
-    <div className={classes.portraitContainer}>
-      <PortraitMin className={cn(classes.portrait, classes.portraitMin, { [classes.hiddenPortraitMin]: isLoaded })} />
-      <img
-        className={cn(classes.portrait, classes.portraitMax, { [classes.shownPortraitMax]: isLoaded })}
-        src={portraitMax}
-        alt={AltTxtKey.Photo}
-        onLoad={() => setIsLoaded(true)}
-      />
-    </div>
-  );
-};
 
 export const About: FC = (): ReactElement => {
   const { t } = useTranslation();
@@ -29,7 +13,12 @@ export const About: FC = (): ReactElement => {
   return (
     <main className={classes.aboutMe}>
       <div className={classes.wrapper}>
-        <Image />
+        <Image
+          ImageSVG={PortraitMin}
+          image={portraitMax}
+          altTxt={AltTxtKey.Photo}
+          className={classes.portraitContainer}
+        />
         <div className={classes.content}>
           <h3 className={classes.title}>{t(ContentTxtKey.AboutTitle)}</h3>
           <h1 className={classes.mainTitle}>{t(ContentTxtKey.MainTitle)}</h1>
