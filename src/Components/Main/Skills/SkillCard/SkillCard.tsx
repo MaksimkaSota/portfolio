@@ -1,23 +1,29 @@
-import type { FC, ReactElement } from 'react';
+import type { ElementType, FC, ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 import classes from './SkillCard.module.scss';
+import { Image } from '../../../Common/Image/Image';
 import { AltTxtKey } from '../../../../utils/types/enums';
 
 type PropsType = {
   name: string;
   className: string;
-  logo: string;
+  logoMin: ElementType;
+  logoMax: string;
 };
 
-export const SkillCard: FC<PropsType> = ({ name, className, logo }): ReactElement => {
+export const SkillCard: FC<PropsType> = ({ name, className, logoMin, logoMax }): ReactElement => {
   const { t } = useTranslation();
 
   return (
     <div className={cn(classes.skillCard, className)}>
-      <div className={classes.logoContainer}>
-        <img className={classes.logo} src={logo} alt={t(AltTxtKey.Logo)} />
-      </div>
+      <Image
+        ImageSVG={logoMin}
+        image={logoMax}
+        altTxt={t(AltTxtKey.Logo)}
+        classNameContainer={classes.logoContainer}
+        classNameImageMax={classes.logo}
+      />
       <p className={classes.name}>{name}</p>
     </div>
   );

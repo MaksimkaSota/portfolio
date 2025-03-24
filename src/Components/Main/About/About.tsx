@@ -16,8 +16,8 @@ export const About: FC = (): ReactElement => {
         <Image
           ImageSVG={PortraitMin}
           image={portraitMax}
-          altTxt={AltTxtKey.Photo}
-          className={classes.portraitContainer}
+          altTxt={t(AltTxtKey.Photo)}
+          classNameContainer={classes.portraitContainer}
         />
         <div className={classes.content}>
           <h3 className={classes.title}>{t(ContentTxtKey.AboutTitle)}</h3>

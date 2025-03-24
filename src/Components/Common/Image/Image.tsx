@@ -6,17 +6,24 @@ type PropsType = {
   ImageSVG: ElementType;
   image: string;
   altTxt: string;
-  className: string;
+  classNameContainer: string;
+  classNameImageMax?: string;
 };
 
-export const Image: FC<PropsType> = ({ ImageSVG, image, altTxt, className }): ReactElement => {
-  const [isLoaded, setIsLoaded] = useState(false);
+export const Image: FC<PropsType> = ({
+  ImageSVG,
+  image,
+  altTxt,
+  classNameContainer,
+  classNameImageMax,
+}): ReactElement => {
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
   return (
-    <div className={cn(classes.container, className)}>
+    <div className={cn(classes.container, classNameContainer)}>
       <ImageSVG className={cn(classes.image, classes.imageMin, { [classes.hiddenImageMin]: isLoaded })} />
       <img
-        className={cn(classes.image, classes.imageMax, { [classes.shownImageMax]: isLoaded })}
+        className={cn(classes.image, classes.imageMax, classNameImageMax, { [classes.shownImageMax]: isLoaded })}
         src={image}
         alt={altTxt}
         onLoad={() => setIsLoaded(true)}

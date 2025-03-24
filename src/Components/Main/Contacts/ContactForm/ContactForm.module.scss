@@ -4,7 +4,6 @@
   width: 40%;
   padding: $indent-max $indent-max $indent-min;
   background: $light-block-background;
-  box-shadow: 0 0 10px 5px $shadow;
   @include corners(50px, 50px);
   @extend %left-bottom-right-top-corners;
 
