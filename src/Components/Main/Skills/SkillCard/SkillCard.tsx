@@ -8,17 +8,17 @@ import { AltTxtKey } from '../../../../utils/types/enums';
 type PropsType = {
   name: string;
   className: string;
-  logoMin: ElementType;
+  LogoMin: ElementType;
   logoMax: string;
 };
 
-export const SkillCard: FC<PropsType> = ({ name, className, logoMin, logoMax }): ReactElement => {
+export const SkillCard: FC<PropsType> = ({ name, className, LogoMin, logoMax }): ReactElement => {
   const { t } = useTranslation();
 
   return (
     <div className={cn(classes.skillCard, className)}>
       <Image
-        ImageSVG={logoMin}
+        ImageSVG={LogoMin}
         image={logoMax}
         altTxt={t(AltTxtKey.Logo)}
         classNameContainer={classes.logoContainer}

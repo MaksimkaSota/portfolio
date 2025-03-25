@@ -1,7 +1,8 @@
-import type { FC, ReactElement } from 'react';
+import type { ElementType, FC, ReactElement } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import cn from 'classnames';
 import classes from './ProjectCard.module.scss';
+import { Image } from '../../../Common/Image/Image';
 import { Link } from '../../../Common/Link/Link';
 import { AltTxtKey, ContentTxtKey, Icon } from '../../../../utils/types/enums';
 
@@ -9,7 +10,8 @@ type PropsType = {
   name: string;
   subname: string;
   className: string;
-  screenshot?: string;
+  ScreenshotMin: ElementType;
+  screenshotMax: string;
   description: string;
   technologies: string;
   codeLink?: string;
@@ -20,7 +22,8 @@ export const ProjectCard: FC<PropsType> = ({
   name,
   subname,
   className,
-  screenshot,
+  ScreenshotMin,
+  screenshotMax,
   description,
   technologies,
   codeLink,
@@ -32,7 +35,12 @@ export const ProjectCard: FC<PropsType> = ({
     <div className={cn(classes.projectCard, className)}>
       <p className={classes.name}>{name}</p>
       <p className={classes.subname}>{subname}</p>
-      <img className={classes.screenshot} src={screenshot} alt={t(AltTxtKey.Logo)} />
+      <Image
+        ImageSVG={ScreenshotMin}
+        image={screenshotMax}
+        altTxt={t(AltTxtKey.Logo)}
+        classNameContainer={classes.screenshotContainer}
+      />
       <p className={classes.description}>
         <span className={classes.highlightText}>{name}</span> {description}
       </p>

@@ -44,50 +44,50 @@ export const Skills: FC = (): ReactElement => {
       <div className={classes.wrapper}>
         <h3 className={classes.title}>{t(ContentTxtKey.SkillsTitle)}</h3>
         <div className={classes.skillCards}>
-          <SkillCard name={t(ContentTxtKey.HTMLSkill)} className={classes.HTML} logoMin={HTMLMin} logoMax={HTMLMax} />
-          <SkillCard name={t(ContentTxtKey.CSSSkill)} className={classes.CSS} logoMin={CSSMin} logoMax={CSSMax} />
-          <SkillCard name={t(ContentTxtKey.LessSkill)} className={classes.Less} logoMin={LessMin} logoMax={LessMax} />
-          <SkillCard name={t(ContentTxtKey.SassSkill)} className={classes.Sass} logoMin={SassMin} logoMax={SassMax} />
-          <SkillCard name={t(ContentTxtKey.JSSkill)} className={classes.JS} logoMin={JSMin} logoMax={JSMax} />
-          <SkillCard name={t(ContentTxtKey.TSSkill)} className={classes.TS} logoMin={TSMin} logoMax={TSMax} />
+          <SkillCard name={t(ContentTxtKey.HTMLSkill)} className={classes.HTML} LogoMin={HTMLMin} logoMax={HTMLMax} />
+          <SkillCard name={t(ContentTxtKey.CSSSkill)} className={classes.CSS} LogoMin={CSSMin} logoMax={CSSMax} />
+          <SkillCard name={t(ContentTxtKey.LessSkill)} className={classes.Less} LogoMin={LessMin} logoMax={LessMax} />
+          <SkillCard name={t(ContentTxtKey.SassSkill)} className={classes.Sass} LogoMin={SassMin} logoMax={SassMax} />
+          <SkillCard name={t(ContentTxtKey.JSSkill)} className={classes.JS} LogoMin={JSMin} logoMax={JSMax} />
+          <SkillCard name={t(ContentTxtKey.TSSkill)} className={classes.TS} LogoMin={TSMin} logoMax={TSMax} />
           <SkillCard
             name={t(ContentTxtKey.ReactSkill)}
             className={classes.React}
-            logoMin={ReactMin}
+            LogoMin={ReactMin}
             logoMax={ReactMax}
           />
           <SkillCard
             name={t(ContentTxtKey.ReduxSkill)}
             className={classes.Redux}
-            logoMin={ReduxMin}
+            LogoMin={ReduxMin}
             logoMax={ReduxMax}
           />
-          <SkillCard name={t(ContentTxtKey.JestSkill)} className={classes.Jest} logoMin={JestMin} logoMax={JestMax} />
+          <SkillCard name={t(ContentTxtKey.JestSkill)} className={classes.Jest} LogoMin={JestMin} logoMax={JestMax} />
           <SkillCard
             name={t(ContentTxtKey.WebpackSkill)}
             className={classes.Webpack}
-            logoMin={WebpackMin}
+            LogoMin={WebpackMin}
             logoMax={WebpackMax}
           />
           <SkillCard
             name={t(ContentTxtKey.ESLintSkill)}
             className={classes.ESLint}
-            logoMin={ESLintMin}
+            LogoMin={ESLintMin}
             logoMax={ESLintMax}
           />
           <SkillCard
             name={t(ContentTxtKey.PrettierSkill)}
             className={classes.Prettier}
-            logoMin={PrettierMin}
+            LogoMin={PrettierMin}
             logoMax={PrettierMax}
           />
-          <SkillCard name={t(ContentTxtKey.GitSkill)} className={classes.Git} logoMin={GitMin} logoMax={GitMax} />
-          <SkillCard name={t(ContentTxtKey.GHSkill)} className={classes.GH} logoMin={GHMin} logoMax={GHMax} />
-          <SkillCard name={t(ContentTxtKey.WSSkill)} className={classes.WS} logoMin={WSMin} logoMax={WSMax} />
+          <SkillCard name={t(ContentTxtKey.GitSkill)} className={classes.Git} LogoMin={GitMin} logoMax={GitMax} />
+          <SkillCard name={t(ContentTxtKey.GHSkill)} className={classes.GH} LogoMin={GHMin} logoMax={GHMax} />
+          <SkillCard name={t(ContentTxtKey.WSSkill)} className={classes.WS} LogoMin={WSMin} logoMax={WSMax} />
           <SkillCard
             name={t(ContentTxtKey.FigmaSkill)}
             className={classes.Figma}
-            logoMin={FigmaMin}
+            LogoMin={FigmaMin}
             logoMax={FigmaMax}
           />
         </div>
