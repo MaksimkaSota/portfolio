@@ -48,7 +48,7 @@ jobs:
           project_id: portfolio-76e85
 
       - name: Install Firebase CLI
-        run: npm install -g firebase-tools
+        run: npm install -g firebase-tools@latest
 
       - name: Deploy to Firebase
-        run: firebase deploy --only functions,hosting --project portfolio-76e85
+        run: firebase deploy --only functions,hosting --project portfolio-76e85 --force
