@@ -3,9 +3,12 @@ import { useTranslation } from 'react-i18next';
 import classes from './Projects.module.scss';
 import { ProjectCard } from './ProjectCard/ProjectCard';
 import { requestString } from '../../../services/api/endpoints';
-import SN from '../../../assets/images/projects/SocialNetwork.png';
-import EC from '../../../assets/images/projects/EasyCharts.png';
-import FP from '../../../assets/images/projects/FutureProject.png';
+import SNMin from '../../../assets/images/projects/SocialNetwork.svg';
+import SNMax from '../../../assets/images/projects/SocialNetwork.png';
+import ECMin from '../../../assets/images/projects/EasyCharts.svg';
+import ECMax from '../../../assets/images/projects/EasyCharts.png';
+import FPMin from '../../../assets/images/projects/FutureProject.svg';
+import FPMax from '../../../assets/images/projects/FutureProject.png';
 import { ContentTxtKey } from '../../../utils/types/enums';
 
 export const Projects: FC = (): ReactElement => {
@@ -20,7 +23,8 @@ export const Projects: FC = (): ReactElement => {
             name={t(ContentTxtKey.SocialNetworkProject)}
             subname={t(ContentTxtKey.StudySubnameText)}
             className={classes.SN}
-            screenshot={SN}
+            ScreenshotMin={SNMin}
+            screenshotMax={SNMax}
             description={t(ContentTxtKey.SocialNetworkDescription)}
             technologies={t(ContentTxtKey.TechnologySNText)}
             codeLink={requestString.socialNetworkCode}
@@ -30,7 +34,8 @@ export const Projects: FC = (): ReactElement => {
             name={t(ContentTxtKey.EasyChartsProject)}
             subname={t(ContentTxtKey.StudySubnameText)}
             className={classes.EC}
-            screenshot={EC}
+            ScreenshotMin={ECMin}
+            screenshotMax={ECMax}
             description={t(ContentTxtKey.EasyChartsDescription)}
             technologies={t(ContentTxtKey.TechnologyECText)}
             codeLink={requestString.easyChartsCode}
@@ -40,7 +45,8 @@ export const Projects: FC = (): ReactElement => {
             name={t(ContentTxtKey.FutureProjectProject)}
             subname={t(ContentTxtKey.PetSubnameText)}
             className={classes.FP}
-            screenshot={FP}
+            ScreenshotMin={FPMin}
+            screenshotMax={FPMax}
             description={t(ContentTxtKey.FutureProjectDescription)}
             technologies={t(ContentTxtKey.TechnologyFPText)}
           />

@@ -1,8 +1,10 @@
-import type { FC, ReactElement } from 'react';
+import { type FC, type ReactElement } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import classes from './About.module.scss';
-import portrait from '../../../assets/images/portrait.jpg';
-import CV from '../../../assets/documents/CV.pdf';
+import { Image } from '../../Common/Image/Image';
+import PortraitMin from '../../../assets/images/portrait.svg';
+import portraitMax from '../../../assets/images/portrait.jpg';
+import resume from '../../../assets/documents/resume.pdf';
 import { AltTxtKey, ContentTxtKey } from '../../../utils/types/enums';
 
 export const About: FC = (): ReactElement => {
@@ -11,7 +13,12 @@ export const About: FC = (): ReactElement => {
   return (
     <main className={classes.aboutMe}>
       <div className={classes.wrapper}>
-        <img className={classes.portrait} src={portrait} alt={AltTxtKey.Photo} />
+        <Image
+          ImageSVG={PortraitMin}
+          image={portraitMax}
+          altTxt={t(AltTxtKey.Photo)}
+          classNameContainer={classes.portraitContainer}
+        />
         <div className={classes.content}>
           <h3 className={classes.title}>{t(ContentTxtKey.AboutTitle)}</h3>
           <h1 className={classes.mainTitle}>{t(ContentTxtKey.MainTitle)}</h1>
@@ -30,7 +37,7 @@ export const About: FC = (): ReactElement => {
               <p className={classes.education}>{t(ContentTxtKey.RSSText)}</p>
               <p className={classes.speciality}>{t(ContentTxtKey.SpecialityText3)}</p>
             </div>
-            <a className={classes.downloadButton} href={CV} download="Maksim Sotnikov">
+            <a className={classes.downloadButton} href={resume} download="Maksim Sotnikov">
               {t(ContentTxtKey.DownloadButton)}
             </a>
           </div>

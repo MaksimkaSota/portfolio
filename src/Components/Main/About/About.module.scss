@@ -7,9 +7,10 @@
     @extend %wrapper-content;
     @include flex(null, space-between, center);
 
-    .portrait {
+    .portraitContainer {
       width: 25%;
-      box-shadow: 0 0 10px 5px $shadow;
+      @include corners(50px, 50px);
+      @extend %left-bottom-right-top-corners;
     }
 
     .content {
@@ -60,7 +61,7 @@
     }
 
     @include respond($laptop) {
-      .portrait {
+      .portraitContainer {
         width: 30%;
       }
 
@@ -77,7 +78,7 @@
       flex-direction: column;
       position: relative;
 
-      .portrait {
+      .portraitContainer {
         @include position(50%, 75.6px 0 $indent-min);
       }
 
@@ -112,7 +113,7 @@
     }
 
     @include respond($mobile) {
-      .portrait {
+      .portraitContainer {
         @include position(70%, 64.4px 0 $indent-min);
       }
 

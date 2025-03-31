@@ -9,9 +9,9 @@
     @include title($error);
   }
 
-  .errorImage {
+  .errorImageContainer {
     width: 35%;
-    filter: drop-shadow(0 0 5px $border-color);
+    filter: drop-shadow(0 0 $border $border-color);
 
     @include respond($laptop) {
       width: 45%;

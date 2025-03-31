@@ -379,22 +379,13 @@ module.exports = function (webpackEnv) {
               test: /\.svg$/,
               use: [
                 {
-                  loader: require.resolve('@svgr/webpack'),
+                  loader: 'babel-loader',
                   options: {
-                    prettier: false,
-                    svgo: false,
-                    svgoConfig: {
-                      plugins: [{ removeViewBox: false }],
-                    },
-                    titleProp: true,
-                    ref: true,
+                    presets: ['react-app'],
                   },
                 },
                 {
-                  loader: require.resolve('file-loader'),
-                  options: {
-                    name: 'static/media/[name].[hash].[ext]',
-                  },
+                  loader: 'react-svg-loader',
                 },
               ],
               issuer: {
