@@ -9,6 +9,7 @@
 
     .portraitContainer {
       width: 25%;
+      overflow: hidden;
       @include corners(50px, 50px);
       @extend %left-bottom-right-top-corners;
     }
