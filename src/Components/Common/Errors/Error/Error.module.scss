@@ -11,6 +11,7 @@
 
   .errorImageContainer {
     width: 35%;
+    overflow: hidden;
     filter: drop-shadow(0 0 $border $border-color);
 
     @include respond($laptop) {

@@ -23,6 +23,7 @@
   .screenshotContainer {
     width: 60%;
     margin: $indent-min auto;
+    overflow: hidden;
     z-index: 2;
 
     @include respond($laptop) {
