@@ -1,5 +1,6 @@
 import { type FC, type ReactElement } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+import cn from 'classnames';
 import classes from './About.module.scss';
 import { Image } from '../../Common/Image/Image';
 import PortraitMin from '../../../assets/images/portrait.svg';
@@ -37,9 +38,19 @@ export const About: FC = (): ReactElement => {
               <p className={classes.education}>{t(ContentTxtKey.RSSText)}</p>
               <p className={classes.speciality}>{t(ContentTxtKey.SpecialityText3)}</p>
             </div>
-            <a className={classes.downloadButton} href={resume} download="Maksim Sotnikov">
-              {t(ContentTxtKey.DownloadButton)}
-            </a>
+            <div className={classes.resumeContainer}>
+              <a
+                className={cn(classes.resumeButton, classes.openButton)}
+                href={resume}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t(ContentTxtKey.OpenButton)}
+              </a>
+              <a className={classes.resumeButton} href={resume} download="Maksim Sotnikov">
+                {t(ContentTxtKey.DownloadButton)}
+              </a>
+            </div>
           </div>
         </div>
       </div>
