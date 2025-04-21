@@ -109,6 +109,7 @@ export enum ContentTxtKey {
   TelegramLink = 'content.link.Telegram',
 
   LanguageButton = 'content.button.language',
+  OpenButton = 'content.button.open',
   DownloadButton = 'content.button.download',
   ResetButton = 'content.button.reset',
   SendButton = 'content.button.send',

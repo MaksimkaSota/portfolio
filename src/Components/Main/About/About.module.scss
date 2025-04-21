@@ -50,12 +50,20 @@
           font-size: $size-14;
         }
 
-        .downloadButton {
-          @extend %button;
+        .resumeContainer {
           @include position(200px, 0 auto);
 
-          &:hover {
-            background: $light-block-background;
+          .resumeButton {
+            @extend %button;
+            width: 100%;
+
+            &:hover {
+              background: $light-block-background;
+            }
+          }
+
+          .openButton {
+            margin: 0 0 $indent-min 0;
           }
         }
       }
@@ -69,7 +77,7 @@
       .content {
         width: 65%;
 
-        .container .downloadButton {
+        .container .resumeContainer {
           @include position(110px, 0);
         }
       }
@@ -106,7 +114,7 @@
             align-self: flex-start;
           }
 
-          .downloadButton {
+          .resumeContainer {
             width: 50%;
           }
         }
@@ -122,7 +130,7 @@
         top: 37.2px;
       }
 
-      .content .container .downloadButton {
+      .content .container .resumeContainer {
         width: 70%;
       }
     }
